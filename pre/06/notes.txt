@@ -8,6 +8,6 @@ HW06 -- Comparing Paradigms: Scheme, Netlogo, Python
   (display "Hello, World!")
   (newline))
 2. Netlogo
-write "Hello, World!"
+print "Hello, World!"
 3. Python
 print("Hello, World!")
