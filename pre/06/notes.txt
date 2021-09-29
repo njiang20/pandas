@@ -1,0 +1,13 @@
+Nina Jiang
+APCS
+HW06 -- Comparing Paradigms: Scheme, Netlogo, Python
+2021-09-28
+
+1. Scheme
+(begin
+  (display "Hello, World!")
+  (newline))
+2. Netlogo
+write "Hello, World!"
+3. Python
+print("Hello, World!")
