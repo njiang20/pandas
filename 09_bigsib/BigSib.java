@@ -1,13 +1,15 @@
-public class Greet{
-	public static void greet(String a) {
+public class BigSib {
+	public static void bigsib(String a) {
 		String name;
 		name = a;
 		System.out.println("Why, hello there, " + name + ". How do you do?");
 	}
 
-	public static void main(String[] args) {
-		greet("Foo");
-		greet("Moo");
-		greet("Loo");
+	class Greet{
+		public static void main(String [] args){
+			BigSib.greet("Flim");
+			BigSib.greet("Flam");
+			BigSib.greet("Kazaam");
+		}
 	}
 }
