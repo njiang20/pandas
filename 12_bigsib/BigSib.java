@@ -1,15 +1,9 @@
 public class BigSib {
-	String helloMsg;
-
-	public void setHelloMsg(String a);
-		helloMsg greet = new String(a);
+	public static void setHelloMsg(String msg) {
+		System.out.print(msg + " ");
 	}
 
-	public static String greet(String freshie) {
-		String sib;
-		sib = helloMsg
-		sib += " " + freshie;
-		return sib;
-	}
+        public static String greet(String name) {
+		return(name + "\nSalutations Dr. Spaceman\nHey ya Kong Fooey\nSup mom");
+        }
 }
-
