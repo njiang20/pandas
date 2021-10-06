@@ -11,7 +11,9 @@ DISCO:
 -constructor name must match the class name
 -it cannot have a return type such as void
 QCC
--
+-why can't constructors have a return type? What happens if you keep it?
+-how many parameters can a constructor have?
+can constructors be private? If so, where are they used?
 */
 
 public class Greet {
