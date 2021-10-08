@@ -1,5 +1,12 @@
+/*
+ziggy's fishball amoebaly rangers: Ziying Jian - Scruffy; Faiza Huda - Truthful Tom; Emily Ortiz - Applesauce; Nina Jiang - Miss Alpaca
+APCS
+HW14 -- Customize Your Creation
+2021-10-07
+*/
+
 public class Greet {
-	public static main(String[] args) {
+	public static void main(String[] args) {
 		String greeting;
 
 		BigSib richard = new BigSib("Word up");
@@ -9,11 +16,14 @@ public class Greet {
 
 		greeting = richard.greet("freshman");
 		System.out.println(greeting);
+
 		greeting = tracy.greet("Dr.Spaceman");
 		System.out.println(greeting);
+
 		greeting = grizz.greet("Kong Fooey");
 		System.out.println(greeting);
+
 		greeting = dotCom.greet("mom");
 		System.out.println(greeting);
-	}
-}
+	} //end main()
+} //end Greet
