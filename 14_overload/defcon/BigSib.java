@@ -1,9 +1,7 @@
 public class BigSib{
-	// instance variable
-	String helloMsg;
+	String helloMsg; //instance var
 
-	// constructor
-	public BigSib(){
+	public BigSib(){ //constr
 		helloMsg = "Word up";
 	}
 
