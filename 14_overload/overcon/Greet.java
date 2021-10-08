@@ -1,10 +1,3 @@
-/*
-ziggy's fishball amoebaly rangers: Ziying Jian - Scruffy; Faiza Huda - Truthful Tom; Emily Ortiz - Applesauce; Nina Jiang - Miss Alpaca
-APCS
-HW14 -- Customize Your Creation
-2021-10-07
-*/
-
 public class Greet {
 	public static void main(String[] args) {
 		String greeting;
