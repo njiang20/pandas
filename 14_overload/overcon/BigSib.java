@@ -14,12 +14,12 @@ QCC:
 */
 
 public class BigSib {
-	String helloMsg;
+	private String helloMsg; //instance var
 
-	public BigSib() {
+	public BigSib() { //default constr
 		helloMsg = "Word Up";
 	}
-	public BigSib(String msg) {
+	public BigSib(String msg) { //overloaded constr
 		helloMsg = msg;
 	}
 
