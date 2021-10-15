@@ -8,8 +8,6 @@ DISCO:
 -we don't need to ask for account name everytime since it's already set to elmo
 QCC:
 -What is a superclass and can there be one here?
-Q2:
-Q3:
 */
 
 public class BankAccount {
