@@ -5,8 +5,11 @@ HW18--CPA-One
 2021-10-14
 
 DISCO:
-
+-we don't need to ask for account name everytime since it's already set to elmo
 QCC:
+-What is a superclass and can there be one here?
+Q2:
+Q3:
 */
 
 public class BankAccount {
@@ -33,13 +36,13 @@ public class BankAccount {
 	}
 
 	//methods
-	public String getInfo(String pss, String pin) {
-		//.equals/compareTo
-		if (pss == accPss && pin == accPin) {
-			return "Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + Double.toString(balance);
+	public void getInfo(String pss, String pin) {
+	//.equals/compareTo
+        	if (pss == accPss && pin == accPin) {
+			System.out.println("Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + balance + "\n");
 		} else {
-			return "Access Denied/Account Doesn't Exist";
-		}
+			System.out.println("Access Denied/Account Doesn't Exist");
+        	}
 	}
 	/*
 	public String getInfo(String name, String pss, String pin) {
@@ -49,7 +52,7 @@ public class BankAccount {
 
 	public void changePin(String oldPin, String newPin) {
 		//add superuser
-		if (oldPin == accPin) {
+		if (oldPin == accPin && newPin.length() == 4) {
 			accPin = newPin;
 		} else {
 			System.out.println("Wrong Pin");
@@ -89,5 +92,18 @@ public class BankAccount {
 	}
 
 	public static void main(String[] args) {
+		BankAccount elmo = new BankAccount("elmo", "e", "101101101", "1011", 69);
+		elmo.getInfo("e", "1011");
+		elmo.changePin("1011", "1111");
+		elmo.getInfo("e", "1111");
+		elmo.changeName("elmoson", "e");
+		elmo.getInfo("e", "1111");
+		elmo.changePsswrd("e", "ee", "ee");
+		elmo.getInfo("ee", "1111");
+		elmo.deposit("1111", 69);
+		elmo.getInfo("ee", "1111");
+		elmo.withdraw("1111", 20);
+		elmo.getInfo("ee", "1111");
+		//correct outputs will have no errors
 	}
 }
