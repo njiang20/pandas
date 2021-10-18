@@ -9,7 +9,7 @@ DISCO:
 QCC:
 -What is a superclass and can there be one here?
 
-Q2: Constructors are used whenever you create an instance of an object. Hence, it Java did not create a constructor for you, BigSib.java would not work.
+Q2: Constructors are used whenever you create an instance of an object. Hence, if Java did not create a constructor for you, BigSib.java would not work.
 Q3: An easy test that we can do is create an instance of a class, say BankAccount and run instanceOfBankAccount.toString(); This will return ClassName@hashcode. This isn't really useful besides for debugging and other things. The superclass to all classes is object class. Class Object has a method toString() which converts an object into a string. Since every class is a subclass of Object, we can do @Override and override the method in our subclass.
 */
 
