@@ -16,7 +16,7 @@ Q3: An easy test that we can do is create an instance of a class, say BankAccoun
 public class BankAccount {
 	//vars
 	private double balance;
-	private String accPin;
+	private short accPin;
 	private String accName;
 	private String accPss;
 	private String accId;
@@ -26,7 +26,7 @@ public class BankAccount {
 
 	}
 	//overloaded constructor
-	public BankAccount(String name, String pss, String id, String pinnum, double setBalance) {
+	public BankAccount(String name, String pss, String id, short pinnum, double setBalance) {
 		balance = setBalance;
 		accPin = pinnum;
 		accName = name;
@@ -37,7 +37,7 @@ public class BankAccount {
 	}
 
 	//methods
-	public void getInfo(String pss, String pin) {
+	public void getInfo(String pss, short pin) {
 	//.equals/compareTo
         	if (pss == accPss && pin == accPin) {
 			System.out.println("Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + balance + "\n");
@@ -51,7 +51,7 @@ public class BankAccount {
 	}
 	*/
 
-	public void changePin(String oldPin, String newPin) {
+	public void changePin(short oldPin, short newPin) {
 		//add superuser
 		if (oldPin == accPin && newPin.length() == 4) {
 			accPin = newPin;
@@ -76,7 +76,7 @@ public class BankAccount {
 		}
 	}
 
-	public void deposit(String pin, double amount) {
+	public void deposit(short pin, double amount) {
 		if (pin == accPin && amount > 0) {
 			balance += amount;
 		} else {
@@ -84,7 +84,7 @@ public class BankAccount {
 		}
 	}
 
-	public void withdraw(String pin, double amount) {
+	public void withdraw(short pin, double amount) {
 		if (pin == accPin && amount > 0) {
 			balance -= amount;
 		} else {
@@ -93,18 +93,19 @@ public class BankAccount {
 	}
 
 	public static void main(String[] args) {
-		BankAccount elmo = new BankAccount("elmo", "e", "101101101", "1011", 69);
-		elmo.getInfo("e", "1011");
-		elmo.changePin("1011", "1111");
-		elmo.getInfo("e", "1111");
+		BankAccount elmo = new BankAccount();
+		elmo.getInfo("e", 1011);
+		elmo.changePin(1011, 1111);
+		elmo.getInfo("e", 1111);
 		elmo.changeName("elmoson", "e");
-		elmo.getInfo("e", "1111");
+		elmo.getInfo("e", 1111);
 		elmo.changePsswrd("e", "ee", "ee");
-		elmo.getInfo("ee", "1111");
-		elmo.deposit("1111", 69);
-		elmo.getInfo("ee", "1111");
-		elmo.withdraw("1111", 20);
-		elmo.getInfo("ee", "1111");
+		elmo.getInfo("ee", 1111);
+		elmo.deposit(1111, 69);
+		elmo.getInfo("ee", 1111);
+		elmo.withdraw(1111, 20);
+		elmo.getInfo("ee", 1111);
+		System.out.println(elmo);
 		//correct outputs will have no errors
 	}
 }
