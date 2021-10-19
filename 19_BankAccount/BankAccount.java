@@ -73,6 +73,5 @@ public class BankAccount {
 		ba.deposit(408);
 		ba.withdraw(351);
 		System.out.println(ba.toString());
-		}
 	}//end main()
 }//end class BankAccount
