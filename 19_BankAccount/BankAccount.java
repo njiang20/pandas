@@ -1,77 +1,101 @@
+/*
+Triumphant Triangles--Nina Jiang, Jason Zhou, John Gupta-she
+APCS
+HW19: Mo Money Mo Problems...MORE AWESOME
+2021-10-18
+DISCO:
+QCC:
+*/
+
 public class BankAccount {
-//instance variables
-	private String name;
-	private String passwd;
-	private short pin;
-	private int acctNum;
-	private double balance;
-//---------------------------------------------
+    //vars
+    private double balance;
+    private short accPin;
+    private String accName;
+    private String accPss;
+    private String accId;
 
-//mutators
-	public String setName( String newName ) {
-		String oldName = name;
-		name = newName;
-		return oldName;
-	}
+    //constructor
+    public BankAccount() {
 
-	public String setPasswd( String newPasswd ) {
-		String oldPasswd = passwd;
-		passwd = newPasswd;
-		return oldPasswd;
-	}
+    }
+    //overloaded constructor
+    public BankAccount(String name, String pss, String id, short pinnum, double setBalance) {
+        balance = setBalance;
+        accPin = pinnum;
+        accName = name;
+        accPss = pss;
 
-	public short setPin( short newPin ) {
-		short oldPin = pin;
-		pin = newPin;
-		return oldPin;
-	}
+        //Randomize?
+        accId = id;
+    }
 
-	public int setAcctNum( int newAcctNum ) {
-		int oldAcctNum = acctNum;
-		acctNum = newAcctNum;
-		return oldAcctNum;
-	}
+    //methods
+    public void getInfo(String pss, short pin) {
+    //.equals/compareTo
+        if (pss == accPss && pin == accPin) {
+            System.out.println("Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + balance + "\n");
+        } else {
+            System.out.println("Access Denied/Account Doesn't Exist");
+        }
+    }
 
-	public double setBalance( double newBalance ) {
-		double oldBalance = balance;
-		balance = newBalance;
-		return oldBalance;
-	}
+    public void changePin(short oldPin, short newPin) {
+    //add superuser
+        if (oldPin == accPin) {
+            accPin = newPin;
+        } else {
+            System.out.println("Wrong Pin");
+        }
+    }
 
-//---------------------------------------------
+    public void changeName(String newName, String pss) {
+        if (pss == accPss) {
+            accName = newName;
+        } else {
+            System.out.println("Wrong Password");
+        }
 
-	public void deposit( double depositAmount ) {
-		balance = balance + depositAmount;
-	}
+    }
 
-	public void withdraw( double withdrawAmount ) {
-		balance = balance - withdrawAmount;
-	}
+    public void changePsswrd(String oldPss, String newPss, String newPssRepeat) {
+        if (oldPss == accPss && newPss == newPssRepeat) {
+            accPss = newPss;
+        } else {
+            System.out.println("Wrong Password");
+        }
+    }
 
+    public void deposit(short pin, double amount) {
+        if (pin == accPin && amount > 0) {
+            balance += amount;
+        } else {
+            System.out.println("Wrong Pin");
+        }
+    }
 
-//overwritten toString()
-	public String toString() {
-		String retStr = "\nAccount info:\n=======================";
-		retStr = retStr + "\nName: " + name;
-		retStr = retStr + "\nPassword: " + passwd;
-		retStr = retStr + "\nPIN: " + pin;
-		retStr = retStr + "\nAccount Number: " + acctNum;
-		retStr = retStr + "\nBalance: " + balance;
-		retStr = retStr + "\n=======================";
-		return retStr;
-	}
+    public void withdraw(short pin, double amount) {
+        if (pin == accPin && amount > 0) {
+            balance -= amount;
+        } else {
+            System.out.println("Wrong Pin");
+        }
+    }
+    public static void main(String[] args) {
+        BankAccount elmo = new BankAccount("elmo", "e", "101101101", (short)1011, 69);
+        elmo.getInfo("e", (short)1011);
+        elmo.changePin((short)1011, (short)1111);
+        elmo.getInfo("e", (short)1111);
+        elmo.changeName("elmoson", "e");
+        elmo.getInfo("e", (short)1111);
+        elmo.changePsswrd("e", "ee", "ee");
+        elmo.getInfo("ee", (short)1111);
+        elmo.deposit((short)1111, 69);
+        elmo.getInfo("ee", (short)1111);
+        elmo.withdraw((short)1111, 20);
+        elmo.getInfo("ee", (short)1111);
+        System.out.println(elmo);
+        //correct outputs will have no errors
+    }
 
-
-//main method for testing
-	public static void main( String[] args ) {
-		BankAccount ba = new BankAccount();
-		ba.setName("deez");
-		ba.setPasswd("123456789");
-		ba.setPin((short)1234);
-		ba.setAcctNum(123456789);
-		ba.setBalance(12);
-		ba.deposit(408);
-		ba.withdraw(351);
-		System.out.println(ba.toString());
-	}//end main()
-}//end class BankAccount
+}
