@@ -4,7 +4,7 @@ APCS
 HW20: External Audit
 2021-10-19
 
-DISCO: N/A
+DISCO: Operations that are possible from BankAccount but not teller.
 Q: N/A
 */
 
@@ -21,17 +21,19 @@ public class Teller {
 		System.out.println(elmo.setPin(10090));
 
 		System.out.println(elmo.setId(123123123));
-		System.out.println(elmo.setId(123123112323));
+		System.out.println(elmo.setId(1231323));
 
-		System.out.println(elmo.setBalance(1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000));
+		System.out.println(elmo.setBalance(1000000));
 		System.out.println(elmo.setBalance(100));
 
-		System.out.println(elmo.deposit(100));
-		System.out.println(elmo.deposit(-100));
+		elmo.deposit(100);
+		elmo.deposit(-100);
 
 		System.out.println(elmo.withdraw(100));
 		System.out.println(elmo.withdraw(-100));
 
-		System.out.println(elmo.authenticate(123123123, "ljasieo"));
+        	System.out.println(elmo.authenticate(9999, "ljasieo"));
+	        System.out.println(elmo.toString());
+		//all seems to work
 	}
 }
