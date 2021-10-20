@@ -93,7 +93,7 @@ public class Stats {
 		System.out.println(Stats.geoMean(9.0, 16.0));
 
 		System.out.println(Stats.max(1, 2, 3));
-		System.out.println(Stats.max(-1, 0, 3))
+		System.out.println(Stats.max(-1, 0, 3));
 		System.out.println(Stats.max(1, 1, 1));
 
 		System.out.println(Stats.max(1.0, 2.0, 3.0));
