@@ -4,7 +4,11 @@ APCS
 HW21: STAtisTically Speaking...
 2021-10-20
 DISCO:
-Q: Since geoMean() uses double, how can I put a double into int geomean() without an error?
+-Math.pow uses double so I need to convert double to int for int geoMean() using (int) Math.round()
+-int Math.round() leads to a compilation error: '.class' expected. Putting () around int fixes it
+
+Q:
+-Since geoMean() uses double, how can I put a double into int geoMean() without an error?
 */
 
 public class Stats {
