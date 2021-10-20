@@ -1,3 +1,12 @@
+/*
+Triumphant Triangles--Nina Jiang, Jason Zhou, John Gupta-she//Duckies: Miss Alpaca, Tiggy, Po
+APCS
+HW21: STAtisTically Speaking...
+2021-10-20
+DISCO:
+Q: Since geoMean() uses double, how can I put a double into int geomean() without an error?
+*/
+
 public class Stats {
 	public static int mean(int a, int b) {
 		int mean = ((a + b)/2);
@@ -30,7 +39,7 @@ public class Stats {
 	}
 
 	public static int geoMean(int a, int b) {
-		int geoMean = Math.sqrt((a * b), 1/2);
+		int geoMean = int Math.round(Math.pow((a * b), 1/2));
 		return geoMean;
 	}
 
@@ -60,7 +69,7 @@ public class Stats {
 	}
 
 	public static int geoMean(int a, int b, int c) {
-		int geoMean = Math.pow((a * b * c), 1/2);
+		int geoMean = int Math.round(Math.pow((a * b * c), 1/2));
 		return geoMean;
 	}
 
