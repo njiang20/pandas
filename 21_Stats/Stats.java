@@ -41,25 +41,37 @@ public class Stats {
 	}
 
 	public static int max(int a, int b, int c) {
-
+		if (a >= b >= c) {
+			return a;
+		} else if (b >= a && b >= c) {
+			return b;
+		} else {
+			return c;
+		}
 	}
 
 	public static double max(double a, double b, double c) {
-
+		if (a >= b >= c) {
+			return a;
+		} else if (b >= a && b >= c) {
+			return b;
+		} else {
+			return c;
+		}
 	}
 
 	public static int geoMean(int a, int b, int c) {
-
+		int geoMean = Math.pow((a * b * c), 1/2);
+		return geoMean;
 	}
 
 	public static double geoMean(double a, double b, double c) {
-
+		double geoMean = Math.pow((a * b * c), 1/2);
+		return geoMean;
 	}
-
 
 	//main method for testing functionality
 	public static void main( String[] args ) {
 
 	}
-
 }//end class
