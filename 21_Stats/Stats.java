@@ -6,8 +6,7 @@ HW21: STAtisTically Speaking...
 DISCO:
 -Math.pow uses double so I need to convert double to int for int geoMean() using (int) Math.round()
 -int Math.round() leads to a compilation error: '.class' expected. Putting () around int fixes it
-
-Q:
+Q/C/C:
 -Since geoMean() uses double, how can I put a double into int geoMean() without an error?
 */
 
