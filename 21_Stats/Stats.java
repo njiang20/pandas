@@ -82,24 +82,24 @@ public class Stats {
 	}
 
 	//main method for testing functionality
-	public static void main( String[] args ) {
-		System.out.println(Stats.mean(1,2));
-		System.out.println(Stats.mean(1.0,2.0));
+	public static void main(String[] args) {
+		System.out.println(Stats.mean(1, 2));
+		System.out.println(Stats.mean(1.0, 2.0));
 
-		System.out.println(Stats.max(1,10));
-		System.out.println(Stats.max(1,4.5));
+		System.out.println(Stats.max(1, 10));
+		System.out.println(Stats.max(1, 4.5));
 
-		System.out.println(Stats.geoMean(9,16));
-		System.out.println(Stats.geoMean(9.0,16.0));
+		System.out.println(Stats.geoMean(9, 16));
+		System.out.println(Stats.geoMean(9.0, 16.0));
 
-		System.out.println(Stats.max(1,2,3));
-		System.out.println(Stats.max(1.0,2.0,3.0));
-		System.out.println(Stats.max(-1,2,3));
-		System.out.println(Stats.max(0,1,2));
-		System.out.println(Stats.max(1,1,1));
-		System.out.println(Stats.max(2.2,2.2,2.2));
+		System.out.println(Stats.max(1, 2, 3));
+		System.out.println(Stats.max(1.0, 2.0, 3.0));
+		System.out.println(Stats.max(-1, 2, 3));
+		System.out.println(Stats.max(0, 1, 2));
+		System.out.println(Stats.max(1, 1, 1));
+		System.out.println(Stats.max(2.2, 2.2, 2.2));
 
-		System.out.println(Stats.geoMean(4,9,16));
-		System.out.println(Stats.geoMean(4.0,9.0,16.0));
+		System.out.println(Stats.geoMean(4, 9, 16));
+		System.out.println(Stats.geoMean(4.0, 9.0, 16.0));
 	}
 }
