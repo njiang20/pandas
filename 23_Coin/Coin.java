@@ -13,6 +13,7 @@ public class Coin {
    *  postcond:
    ***/
 	public Coin() {
+		upFace = "heads"
 		bias = 0.5;
 		flipCtr = 0;
 		headsCtr = 0;
@@ -34,6 +35,7 @@ public class Coin {
   
 	public Coin(String s) {
 		name = s;
+		assignValue(s);
 	}
 
 
@@ -45,6 +47,7 @@ public class Coin {
 	public Coin(String s, String nowFace ) {
 		name = s;
 		upFace = nowFace;
+		assignValue(s)
 	}
 
 
@@ -147,7 +150,13 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-	
+	if ( other.name.equals(null) ) {
+			return false;
+		} else if ( upFace.equals(other.upFace) ) {
+			return true;
+		} else {
+			return false;
+		}
   }
 
 
@@ -157,7 +166,8 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-	
+	String retStr = name + " -- " + upFace; 
+	return retStr;
   }
 
 }//end class
