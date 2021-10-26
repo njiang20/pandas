@@ -22,8 +22,8 @@ public class Driver {
 		System.out.println("yours: " + yours);
 		System.out.println("wayne: " + wayne);
 
-		int numHeads, numMatches; // number of heads we want, number of matches we want
-		int matchCtr = 0; // current match counter
+		int numHeads, numMatches;
+		int matchCtr = 0;
 		numHeads = 10;
 		numMatches = 65536;
 
