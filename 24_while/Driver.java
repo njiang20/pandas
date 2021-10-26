@@ -31,19 +31,14 @@ public class Driver {
 		System.out.println("yours: " + yours);
 		System.out.println("wayne: " + wayne);
 
-		int numHeads, numMatches;
+		int numHeads = 0;
 		int matchCtr = 0;
-		numHeads = 10;
-		numMatches = 65536;
 
 		while(matchCtr >= 65536 && matchCtr % 2004 == 0){
 			yours.flip();
 			wayne.flip();
 			if (yours.equals(wayne)) {
-				System.out.println("Matchee matchee!");
-				matchCtr++;
-			} else {
-				System.out.println("No match. Firestarter you can not be.");
+				matchCtr ++;
 			}
 		}
 
