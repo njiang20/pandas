@@ -1,3 +1,12 @@
+/*
+Nina Jiang
+APCS
+2021-10-26
+time spent: 0.53h
+DISCO: n/a
+Q/C/C: n/a
+*/
+
 public class Repeat {
 	public static String fenceW(int numPosts) {
 		int x = 1;
@@ -6,7 +15,7 @@ public class Repeat {
 			result += "--|";
 			x++;
 		}
-		return result;        
+		return result;
 	}
 
 	public static String fenceR(int numPosts) {
