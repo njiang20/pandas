@@ -26,12 +26,18 @@ public class Rof {
 	}
 
 	public static String reverseR(String s) {
-		int half = s.length() / 2;
-		if (s.length() == 1) {
-			return s;
-		} else {
-			return reverseR(s.substring(half)) + reverseR(s.substring(0, half));
+		if (s.length() == 0) {
+			return "";
 		}
+		return lastLetter(s) + reverseR(reduceLetter(s));
+	}
+
+	public static String reduceLetter(String s) {
+		return s.substring(0, s.length() - 1);
+	}
+
+	public static String lastLetter(String s) {
+		return s.substring(s.length() - 1, s.length());
 	}
 
 	public static void main(String [] args) {
