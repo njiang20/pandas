@@ -26,11 +26,11 @@ public class Rof {
 	}
 
 	public static String reverseR(String s) {
-		int result = s.length();
+		int half = s.length() / 2;
 		if (s.length() == 1) {
 			return s;
 		} else {
-			return reverseR(s.substring(result - 1, s.length()));
+			return reverseR(s.substring(half)) + reverseR(s.substring(0, half));
 		}
 	}
 
