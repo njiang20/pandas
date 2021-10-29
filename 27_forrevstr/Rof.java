@@ -2,10 +2,10 @@
 Nina Jiang and Kevin Li
 APCS
 2021-10-28
-Time spent: 0.53h
+Time spent: 0.7h
 
-DISCO:
-Q/C/C:
+DISCO: n/a
+Q/C/C: n/a
 */
 
 public class Rof {
