@@ -4,7 +4,9 @@ APCS
 2021-10-28
 Time spent: 0.7h
 
-DISCO: n/a
+DISCO:
+-Return statesments cause a method to stop and cayse the code after the return statement to stop running
+-This is because it is considered unreachable code and therefore recursive loops end with returning a base case
 Q/C/C: n/a
 */
 
