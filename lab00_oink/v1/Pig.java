@@ -170,9 +170,9 @@ public class Pig {
       =====================================*/
       public static boolean hasPunc( String w ) {
 	boolean ans = false;
-	for( int i = 0; i < w.length(); i++ ) {
-		if ( isPunc(w.substring(i,i+1)) ) {
-			ans = true;
+   	for( int i = 0; i < w.length(); i++ ) {
+       		if ( isPunc(w.substring(i,i+1)) ) {
+       			ans = true;
 		}
 	}
 	return ans;
@@ -214,4 +214,3 @@ public class Pig {
   }//end main()
 
 }//end class Pig
-

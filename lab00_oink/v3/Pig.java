@@ -1,3 +1,7 @@
+/**
+Added capitilation rule: If first letter in english is uppercap then first letter in piglatin must be uppercap
+**/
+   
 import java.util.Scanner;
 
 public class Pig {
@@ -194,7 +198,7 @@ long version using for
 			ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
 			if (beginsWithUpper(w) && w.length() != 1) {
 				String upper = w.substring(1, 2).toUpperCase();
-				ans = upper + ans.substring(1);
+				ans = upper + ans.substring(1).toLowerCase();
 			}
 		}
 		return ans;
