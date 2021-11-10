@@ -9,7 +9,7 @@ public class Pig {
     post: hasA("cat", "a") -> true
     hasA("cat", "p") -> false
 =====================================*/
-	
+
 	public static boolean hasA( String w, String letter ) {
 		return w.indexOf(letter) != -1;
 	}//end hasA()
@@ -25,14 +25,14 @@ equiv code, wo using indexOf()...
        }
        return ans;
 =====================================*/
-		
 
-	
+
+
 /*=====================================
     boolean isAVowel(String) -- tells whether a letter is a vowel
     precondition: letter.length() == 1
 =====================================*/
-	
+
 	public static boolean isAVowel( String letter ) {
 		return VOWELS.indexOf( letter ) != -1;
 	}
@@ -93,7 +93,7 @@ long version using for
     firstVowel("zzz") --> ""
     firstVowel("meatball") --> "e"
 =====================================*/
-	
+
 	public static String firstVowel( String w ) {
 		String ans = "";
 		if ( hasAVowel(w) ) //Q: Why this necess?
@@ -118,7 +118,7 @@ long version using for
       post: isPunc(".") -> true
             isPunc("b") -> false
 =====================================*/
-    
+
 	public static boolean isPunc( String symbol ) {
 		return PUNCS.indexOf( symbol ) != -1;
 	}
@@ -150,14 +150,14 @@ long version using for
 	public static boolean beginsWithUpper( String w ) {
 		return isUpperCase(w.substring(0,1) );
 	}
-	
+
 /*=====================================
       boolean isUpperCase(String) -- tells whether a letter is uppercase
       pre:  letter.length() == 1
       post: isUpperCase("a") -> false
             isUpperCase("A") -> true
 =====================================*/
-	
+
 	public static boolean isUpperCase( String letter ) {
 		return CAPS.indexOf( letter ) != -1;
 	}
@@ -181,14 +181,12 @@ long version using for
 
 	public static String engToPig( String w ) {
 		String ans = "";
-		if ( beginsWithVowel(w) ){
+		if (beginsWithVowel(w)) {
 			ans = w + "way";
 		}
 		else if (hasUpper(w) && w.length() != 1) {
-			String upperCase = w.substring(1, 2).toUpperCase();
-			ans = upperCase + w.substring(2) + w.substring(0, 1).toLowerCase() + "ay";
-		}
-		else {
+			String upper = w.substring(1, 2).toUpperCase();
+			ans = upper + w.substring(2) + w.substring(0, 1).toLowerCase() + "ay";
 			int vPos = w.indexOf( firstVowel(w) );
 			ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
 		}
