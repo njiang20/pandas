@@ -1,3 +1,5 @@
+// Version 0, working version of Thluffy oink Pig.java
+// Debugged hasAVowel
 public class Pig {
 
   private static final String VOWELS = "aeiou";
@@ -63,7 +65,7 @@ public class Pig {
     hasAVowel("zzz") -> false
     **/
   public static boolean hasAVowel( String w ) {
-    return w.indexOf(w) >= 0;
+    return countVowels(w) > 0;
   }
 
 
@@ -141,7 +143,7 @@ public class Pig {
 
     for( String word : args ) {
       System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowels \t" + firstVowel(word) );
+      System.out.println( "firstVowel \t" + firstVowel(word) );
       System.out.println( "countVowels \t" + countVowels(word) );
       System.out.println( "engToPig \t" + engToPig(word) );
       System.out.println( "---------------------" );
@@ -150,3 +152,4 @@ public class Pig {
   }//end main()
 
 }//end class Pig
+
