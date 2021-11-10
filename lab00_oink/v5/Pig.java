@@ -183,12 +183,13 @@ long version using for
 		String ans = "";
 		if (beginsWithVowel(w)) {
 			ans = w + "way";
-		}
-		else if (hasUpper(w) && w.length() != 1) {
-			String upper = w.substring(1, 2).toUpperCase();
-			ans = upper + w.substring(2) + w.substring(0, 1).toLowerCase() + "ay";
+		} else {
 			int vPos = w.indexOf( firstVowel(w) );
 			ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+		}
+		if (hasUpper(w) && w.length() != 1) {
+			String upper = w.substring(1, 2).toUpperCase();
+			ans = upper + w.substring(2) + w.substring(0, 1).toLowerCase() + "ay";
 		}
 		return ans;
 	}
