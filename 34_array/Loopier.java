@@ -1,3 +1,18 @@
+/*
+Team Orange Marshmellows: Nina Jiang, Diana Akhmedova, Julia Kozak // Duckies: Miss Alpaca, Ajax, Flopsy
+APCS
+HW34: A Pirate's Life for Me
+2021-11-13
+
+DISCO:
+* Using counter ++ in a recursion function causes the method to keep running without stop.
+* When finding the lengths of an array, the two parenthesis in length() isn't needed.
+* To return an array in the method, the type of the array needs to have two brackets.
+
+QCC:
+* Is it possible to do the methods with two methods?
+*/
+
 import java.util.Random;
 public class Loopier {
 
