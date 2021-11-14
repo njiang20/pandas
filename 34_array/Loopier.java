@@ -3,6 +3,7 @@ Team Orange Marshmellows: Nina Jiang, Diana Akhmedova, Julia Kozak // Duckies: M
 APCS
 HW34: A Pirate's Life for Me
 2021-11-13
+Time Spent: 2.2h
 
 DISCO:
 * Using counter ++ in a recursion function causes the method to keep running without stop.
