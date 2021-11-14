@@ -85,7 +85,7 @@ public class Loopier {
   }
 
 	public static void main (String[] args) {
-		int[] a = new int[5];
+		int[] a = new int[20];
 		a = intArray(a);
 		int target = (int)(Math.random() * 100);
 		System.out.println("Array: ");
