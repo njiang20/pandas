@@ -14,7 +14,6 @@ QCC:
 * Is it possible to do the methods with two methods?
 */
 
-import java.util.Random;
 public class Loopier {
 
   public static int[] intArray(int[] a) {
