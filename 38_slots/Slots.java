@@ -57,7 +57,7 @@ public class Slots {
     for(int i = 0; i < 3; i++) {
       ans += ary[i];
     }
-    return ans + "      ";
+    return ans + "    ";
   }
 
 
@@ -83,7 +83,7 @@ public class Slots {
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
     for(int i = 0; i < _fruits.length; i++)
-      swap(  );
+      swap(i, (int) (Math.random() * _fruits.length - 1));
   }
 
 
