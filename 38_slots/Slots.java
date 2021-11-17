@@ -1,11 +1,12 @@
 /*****************************************************
- * Clyde "Thluffy" Sinclair
- * APCS pd00
- * HW38 -- Shmoney
- * 2021-11-18
+ * Team Orange Marshmellows: Nina Jiang, Diana Akhmedova, Julia Kozak // Duckies: Miss Alpaca, Ajax, Flopsy
+ * APCS
+ * HW38: Spin Class
+ * 2021-11-17
+ * Time Spent:
  *
- * class Slots
- * skeleton
+ * DISCO:
+ * QCC:
  *****************************************************/
 
 public class Slots {
