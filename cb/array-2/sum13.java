@@ -8,11 +8,11 @@ public class sum13 {
       if(nums[i] == 13){
         i += 2;
       } else {
-        sum += nums[i];
+        total += nums[i];
         i++;
       }
     }
-    return sum;
+    return total;
   }
   public static void main(String[] args) {
     System.out.println(sum(new int [] {1, 2, 2, 1}));
