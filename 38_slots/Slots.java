@@ -36,8 +36,7 @@ public class Slots {
     pre:  constant array FRUITS exists, has been initialized
     post: mutable array _fruits contains same elements as FRUITS
     =====================================*/
-  public Slots()
-  {
+  public Slots(){
     //allocate memory for _fruits based on size of FRUITS:
     String[] output = new String[15];
     for(int i = 0; i < output.length; i++) {
@@ -45,7 +44,6 @@ public class Slots {
     }
 
     //copy elements of FRUITS into _fruits:
-
   }
 
 
@@ -54,8 +52,7 @@ public class Slots {
     pre:
     post: returns String of elements in slots 0 thru 2, separated by tabs
     =====================================*/
-  public String toString(int[] ary)
-  {
+  public String toString(int[] ary){
     String ans = "Your spin...     ";
     for(int i = 0; i < 3; i++) {
       ans += ary[i];
@@ -69,8 +66,7 @@ public class Slots {
     pre:  _fruits array exists
     post: elements at indices i, j are swapped
     =====================================*/
-  private void swap( int i, int j )
-  {
+  private void swap( int i, int j ){
     int oldJ = _fruits[j];
     _fruits[i] = _fruits[j];
     _fruits[j] = oldJ;
@@ -82,8 +78,7 @@ public class Slots {
     pre:  _fruits array exists
     post: randomized order of elements in _fruits array
     =====================================*/
-  public void spinOnce()
-  {
+  public void spinOnce(){
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
@@ -98,8 +93,7 @@ public class Slots {
     post: returns true if first 3 slots represent winning combo,
     false otherwise
     =====================================*/
-  public boolean jackpot()
-  {
+  public boolean jackpot(){
     boolean retBoo = false;
 
 
@@ -114,8 +108,7 @@ public class Slots {
     or if first 3 slots mutually distinct,
     false otherwise
     =====================================*/
-  public boolean miniWin()
-  {
+  public boolean miniWin(){
     boolean retBoo = ?
 
 
