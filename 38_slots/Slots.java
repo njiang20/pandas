@@ -38,11 +38,10 @@ public class Slots {
     =====================================*/
   public Slots(){
     //allocate memory for _fruits based on size of FRUITS:
-    String[] output = new String[15];
-    for(int i = 0; i < output.length; i++) {
-      output[i] = FRUITS[i];
+    _fruits = new String[15];
+    for(int i = 0; i < FRUITS.length; i++) {
+      _fruits[i] = FRUITS[i];
     }
-
     //copy elements of FRUITS into _fruits:
   }
 
@@ -53,11 +52,11 @@ public class Slots {
     post: returns String of elements in slots 0 thru 2, separated by tabs
     =====================================*/
   public String toString(int[] ary){
-    String ans = "Your spin...     ";
+    String ans = "Your spin...  ";
     for(int i = 0; i < 3; i++) {
       ans += ary[i];
     }
-    return ans + "    ";
+    return ans + "   ";
   }
 
 
@@ -82,8 +81,8 @@ public class Slots {
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
-    for(int i = 0; i < _fruits.length; i++)
-      swap(i, (int) (Math.random() * _fruits.length - 1));
+    for(int i = 0; i < _fruits.length - 1; i++)
+      swap(i, (int)(Math.random() * _fruits.length));
   }
 
 
@@ -95,8 +94,11 @@ public class Slots {
     =====================================*/
   public boolean jackpot(){
     boolean retBoo = false;
-
-
+    if(_fruits[0].equals(_fruits[1]) && _fruits[1].equals(_fruits[2])){
+      retBoo = true;
+    } else {
+      retBoo = false;
+    }
     return retBoo;
   }
 
@@ -109,9 +111,13 @@ public class Slots {
     false otherwise
     =====================================*/
   public boolean miniWin(){
-    boolean retBoo = ?
-
-
+    boolean retBoo = false;
+    boolean distinct = false;
+    if(!(_fruits[0].equals(_fruits[1]) && !(fruits[1].equals(_fruits[2])) && !(_fruits[0].equals(_fruits[2]))){
+      distinct = true;
+    } if(distinct || jackpot()){
+      retBoo = true;
+    }
     return retBoo;
   }
 
