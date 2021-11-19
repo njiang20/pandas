@@ -2,6 +2,7 @@ DEBUGGING:
 > compile-time errors: something wrong with the program's syntax (ex: missing semicolon)
 > run-time errors: something goes wrong while running (ex: infinite recursion --> StackOverflowError)
 > logic errors: causes program to do the wrong thing (ex: wrong order in evaluating an expression)
+
 ——— Compile-Time Errors ———
 > only the first error is truly reliable: program may be reporting spurious errors
 > error message will tell you where in the program the problem occurred
@@ -23,6 +24,7 @@ DEBUGGING:
 > "class Golfer must be declared abstract. It does not define int compareTo(java.lang.Object) from interface java.lang.Comparable"
   * wants to declare Golfer as an abstract class <-- no!
   * make sure Golfer has a method compareTo that takes an Object as a parameter
+
 ——— Run-Time Errors ———
 > hanging program: it is doing nothing due to possibly being caught in an infinite loop/recursion
   * StackOverflowError
@@ -37,6 +39,7 @@ DEBUGGING:
   * ArrayIndexOutOfBoundsException: the index you are trying to access an array with is either negative or greater than array.length - 1
   * FileNotFoundException: file doesn't exist or incorrect path
   * ArithmeticException: error during arithmetic operation (ex: divide by zero)
+
 ——— Logic Errors ———
 > hard to find because compiler and interpreter give no information
   * integer division rounds to zero, fractions use double
