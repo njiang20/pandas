@@ -1,0 +1,52 @@
+DEBUGGING:
+> compile-time errors: something wrong with the program's syntax (ex: missing semicolon)
+> run-time errors: something goes wrong while running (ex: infinite recursion --> StackOverflowError)
+> logic errors: causes program to do the wrong thing (ex: wrong order in evaluating an expression)
+——— Compile-Time Errors ———
+> only the first error is truly reliable: program may be reporting spurious errors
+> error message will tell you where in the program the problem occurred
+  * where the compiler was when the problem was noticed
+  * not necessarily where the error is
+    ~ may be prior to the location of the message or elsewhere (ex: method definition)
+> common syntax errors:
+  1) parentheses, brackets, method in class and program statement in method definition
+  2) uppercase != lowercase, semicolons after statements
+  3) "" for strings and '' for characters
+  4) assignment statements: type on left = type on right; left is variable name/something you can assign value to (ex: element of an array)
+  5) method invocation: arguments in right order and type and object that the method is invoked on is the right type
+  6) value method: do something with the result, opposite with void method
+  7) instance method: right type — invoking static method outside class it's defined: specify class name (dot notation)
+  8) inside instance method can refer to instance variables without specifying an object
+    ~ if in static method (with or without this): "non-static variable x can not be referenced from a static context"
+> sometimes error maybe caused by the presence of multiple copies of the program
+  * debug by bisection
+> "class Golfer must be declared abstract. It does not define int compareTo(java.lang.Object) from interface java.lang.Comparable"
+  * wants to declare Golfer as an abstract class <-- no!
+  * make sure Golfer has a method compareTo that takes an Object as a parameter
+——— Run-Time Errors ———
+> hanging program: it is doing nothing due to possibly being caught in an infinite loop/recursion
+  * StackOverflowError
+  * check base case (recursion) + condition that makes method return without making a recursive invocation
+  * flock of execution
+> exception: java displays message with name of exception, line of program, and stack interface
+  * stack trace: method running + method that invoked it, etc
+  * NullPointerException: tried to access an instance variable or invoke a method on an object that is currently null
+    ~ when you declare a variable with an array type its elements are initially null
+    ~ ex: int[] array = new Point[5];
+          System.out.println(array[0].x);
+  * ArrayIndexOutOfBoundsException: the index you are trying to access an array with is either negative or greater than array.length - 1
+  * FileNotFoundException: file doesn't exist or incorrect path
+  * ArithmeticException: error during arithmetic operation (ex: divide by zero)
+——— Logic Errors ———
+> hard to find because compiler and interpreter give no information
+  * integer division rounds to zero, fractions use double
+    ~ countable things (int); measurable things with floating-point number
+  * floating-point numbers are approximate
+  * don't use == with double
+    ~ ex: instead of if (d == 1.23); --> if(Math.abs(d - 1.23) < .000001)
+  * when you apply the equality operator (==) to Objects, it checks identicality. Use equals methods for equality instead
+    ~ by default equals checks identity; for different equivalence, override it
+> inheritance can be a cause
+> complex epressions and order of operations
+> use temporary variables (ex: x1, y1, x2, y2...)
+> println displays output immediately but print in some cases stores output without being displayed until next new line
