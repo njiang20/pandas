@@ -5,8 +5,11 @@ HW42 -- Be More Rational
 2021-12-06
 Time Spent: 0.5 hrs
 
-DISCO: set placeholder variables for the values in methods like gcd(), or else reduce will evaluate the method value multiple times;
-QCC:   would it be possible to create a method that changes variable values for more than one instance (ex, multiply operates on both the calling and parameter instances)?
+DISCO:
+* set placeholder variables for the values in methods like gcd(), or else reduce will evaluate the method value multiple times;
+QCC:
+* would it be possible to create a method that changes variable values for more than one instance (ex, multiply operates on both the calling and parameter instances)?
+* would it be problematic to compare the floating point values of two Rationals, if they're equal (as in, could there be rounding errors)?
 */
 
 public class Rational {
