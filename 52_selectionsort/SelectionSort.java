@@ -1,15 +1,16 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW52 -- implementing selection sort
-// 2022-01-05w
-// time spent:  hrs
-
 /******************************
- *   class SelectionSort -- implements SelectionSort algorithm
+Nina Jiang // Miss Alpaca
+APCS pd08
+HW52 -- implementing selection sort
+2022-01-05
+time spent: 1 hrs
+
+ * class SelectionSort -- implements SelectionSort algorithm
  *
- * ALGO:
+ * ALGO: For selectionSortV algorithm, we found the smallest element and moved it to the beginning of the array. Then we found the next smallest element and repeated until data.size() - 1 passes have occured.
  *
- * DISCO
+ * DISCO: Compiling causes an "unsafe" warning.
+ *        The ArrayList methods size and set can be used to change the value/element at a specific index.
  *
  * QCC
  * q0: How many passes to sort n elements?
