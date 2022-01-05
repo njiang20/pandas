@@ -54,7 +54,6 @@ public class SelectionSort {
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
   // VOID version of SelectionSort
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
@@ -69,7 +68,7 @@ public class SelectionSort {
       maxPos = pass;
 
       for(int i = pass - 1; i >= 0; i--) {
-        if(data.get(i).compareTo(data.get(maxPos)) > 0) {
+        if((int)data.get(i) > (int)data.get(maxPos)) {
           maxPos = i;
         }
 
@@ -77,6 +76,10 @@ public class SelectionSort {
         System.out.println( data );//diag
 
       }
+
+      /* Comparable temp = data.get(pass);
+      data.set(pass, data.get(maxPos));
+      data.set(maxPos, temp); */
 
       Comparable temp = data.get(pass);
       data.set(pass, data.get(maxPos));
@@ -110,7 +113,6 @@ public class SelectionSort {
 
   public static void main( String [] args ) {
 
-/*===============for VOID methods=============
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -125,9 +127,9 @@ public class SelectionSort {
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
-============================================*/
 
 
+/*
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -145,7 +147,7 @@ public class SelectionSort {
     System.out.println( "sorted version of ArrayList coco:\n" + cocoSorted );
     System.out.println( "ArrayList coco after sorting:\n" + coco );
     System.out.println( coco );
-
+*/
 
   }//end main
 
