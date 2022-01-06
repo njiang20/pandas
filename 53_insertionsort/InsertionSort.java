@@ -1,5 +1,5 @@
 /******************************
-Orange Bananas: Nina Jiang//Miss Alpaca, Eric He, Russell Goychayev
+Orange Bananas: Nina Jiang, Eric He, Russell Goychayev//Miss Alpaca, Zhengxi He
 APCS pd08
 HW53 -- implementing insertion sort
 2022-01-06
