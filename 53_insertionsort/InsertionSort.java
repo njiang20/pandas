@@ -7,7 +7,9 @@ time spent: 0.5h
 
  * class InsertionSort -- implements InsertionSort algorithm
  *
- * ALGO:
+ * ALGO: The partition is located to the right of the element at index 0. Thus, we set the initial value of the partition to zero, which will be incremented by
+ *       one, increasing the size of the sorted region by one, as one element at a time is "walked" from the unsorted region and inserted into where it belongs
+ *       in the sorted region. This is repeated until all elements are sorted, meaning n - 1 (data.size() - 1) passes have occured.
  *
  * DISCO:
  *
