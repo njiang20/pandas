@@ -13,17 +13,16 @@
  *
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n - 1 passes
  * q1: What do you know after pass p?
- * a1:
+ * a1: The element that was at index p are now in the sorted region.
  * q2: How will you know when sorted?
- * a2:
+ * a2: n - 1 passes have occured.
  * q3: What constitues a pass?
- * a3:
+ * a3: When one element at a time is "walked" into the sorted region separated by the partition.
  * q4: What must you track?
- * a4:
+ * a4: The index at which the partition is, which increments the size of the sorted region by one.
  ******************************/
-
 
 import java.util.ArrayList;
 @SuppressWarnings("unchecked")
