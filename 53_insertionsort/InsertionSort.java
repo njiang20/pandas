@@ -11,7 +11,8 @@ time spent: 0.5h
  *       one, increasing the size of the sorted region by one, as one element at a time is "walked" from the unsorted region and inserted into where it belongs
  *       in the sorted region. This is repeated until all elements are sorted, meaning n - 1 (data.size() - 1) passes have occured.
  *
- * DISCO:
+ * DISCO: Compiling causes an "unsafe" warning.
+ *        Instead of swapping, we can use the add method to insert the walked element into its place in the sorted region.
  *
  * QCC
  * q0: How many passes to sort n elements?
