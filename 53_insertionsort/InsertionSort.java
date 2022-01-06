@@ -1,15 +1,15 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW53 -- implementing insertion sort
-// 2022-01-06r
-// time spent:  hrs
-
 /******************************
+Orange Bananas: Nina Jiang//Miss Alpaca, Eric He, Russell Goychayev
+APCS pd08
+HW53 -- implementing insertion sort
+2022-01-06
+time spent: 0.5h
+
  * class InsertionSort -- implements InsertionSort algorithm
  *
  * ALGO:
  *
- * DISCO
+ * DISCO:
  *
  * QCC
  * q0: How many passes to sort n elements?
