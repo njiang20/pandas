@@ -74,4 +74,8 @@ public class Magpie2 {
 
 		return response;
 	}
+
+	public String trim() {
+
+	}
 }
