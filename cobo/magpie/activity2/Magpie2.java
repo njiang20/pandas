@@ -10,6 +10,20 @@
  * @author Laurie White
  * @version April 2012
  */
+
+ /*
+ Orange Bananas: Nina Jiang, Eric He, Russell Goychayev//Miss Alpaca, Zhengxi He
+ APCS pd08
+ HW56: Turing Training Wheels
+ 2022-01-12
+ time spent: 1h
+
+ DISCO:
+ * When more than one keyword is inputed, the keyword that appears in an early if statement runs first, and its response is prioritized.
+ * If a keyword appears in a word, it still counts as a keyword and will run the appropriate response.
+ QCC:
+ */
+
 public class Magpie2 {
 	/**
 	 * Get a default greeting
@@ -39,6 +53,8 @@ public class Magpie2 {
 			response = "Tell me more about your pets.";
 		} else if (statement.indexOf("Mr. Mykolyk") >= 0) {
 			response = "He sounds like a good teacher.";
+		} else if (statement.trim().length() == 0) {
+			response = "Say something, please.";
 		}	else {
 			response = getRandomResponse();
 		}
@@ -75,11 +91,4 @@ public class Magpie2 {
 		return response;
 	}
 
-	public String trim(String statement) {
-		String charUpper[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
-		String charLower[] = {"abcdefghijklmnopqrstuvwxyz"}
-		for(i = 0; i < statement.length(); i++) {
-			
-		}
-	}
 }
