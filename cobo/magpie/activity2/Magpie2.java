@@ -75,8 +75,11 @@ public class Magpie2 {
 		return response;
 	}
 
-	public String trim() {
+	public String trim(String statement) {
 		String charUpper[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 		String charLower[] = {"abcdefghijklmnopqrstuvwxyz"}
+		for(i = 0; i < statement.length(); i++) {
+			
+		}
 	}
 }
