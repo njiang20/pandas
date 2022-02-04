@@ -67,6 +67,15 @@ public class StatPrinter
   public StatPrinter( ArrayList <Integer> data )
   {
     /* YOUR IMPLEMENTATION HERE */
+    for(int i=0; i<max(data)+1; i++){
+      int counter =0;
+      for(int j=0; j<data.size(); j++){
+        if(data.get(j)==i){
+          counter++;
+        }
+        _frequency.add(counter);
+      }
+    }
   }
 
 
@@ -75,7 +84,12 @@ public class StatPrinter
   //postcond: returns largest integer in data
   public Integer max( ArrayList <Integer> data )
   {
+    int max = 0;
+    for(int i=0; i<data.size(); i++){
+      max = Math.max(max, data.get(i));
+    }
     /* YOUR IMPLEMENTATION HERE */
+    return max;
   }
 
 
@@ -92,6 +106,16 @@ public class StatPrinter
   public boolean isLocalMode( int i )
   {
     /* YOUR IMPLEMENTATION HERE */
+    if((i<=0) || i>_frequency.size() -1){
+      return false;
+    }
+    if(_frequency.get(i)<_frequency.get(i-1)){
+      return false;
+    }
+    if(_frequency.get(i)<_frequency.get(i+1)){
+      return false;
+    }
+    return true;
   }
 
 
@@ -99,8 +123,8 @@ public class StatPrinter
   //postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes()
   {
-    /* YOUR IMPLEMENTATION HERE */
 
+    return _frequency;
   }
 
 
@@ -108,7 +132,7 @@ public class StatPrinter
   //precond:  longestBar > 0
   public void printHistogram( int longestBar )
   {
-    /* YOUR IMPLEMENTATION HERE */
+
   }
 
 }//end class StatPrinter
