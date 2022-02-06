@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Watermelon (Lea Kwok, Nina Jiang, Lawrence Joa)
+// APCS pd7
 // L05 -- pulling it together
-// 2022-02-03r
-// time spent:  hrs
+// 2022-02-06
+// time spent: 1.5 hrs
 
 /***
  * class StatPrinterApp
@@ -60,11 +60,11 @@ public class StatPrinterApp
     System.out.println( "sp2 testing: " );
     System.out.println( "al2 max: " + sp1.max(al2) );
     System.out.println( "local modes: " );
-    for( Integer i : al2 ) {
-    System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
+    for(int i=0; i<=sp2.max(al2); i++) {
+    System.out.println( sp2.returnFreq().get(i) + " is local mode?\t" + sp2.isLocalMode(i) );
     }
     System.out.println( "histogram:" );
-    sp2.printHistogram( 50 );
+    sp2.printHistogram( 20 );
   }
 
 }//end StatPrinterApp
