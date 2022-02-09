@@ -5,10 +5,11 @@
   Summary of Algorithm:
 
   ***/
-
+import java.util.*;
 
 public class MergeSort
 {
+
   /******************************************************
    * int[] merge(int[],int[])
    * Merges two input arrays
