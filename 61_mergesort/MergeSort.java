@@ -6,6 +6,7 @@
 
   ***/
 
+import java.util.Arrays;
 
 public class MergeSort
 {
@@ -19,19 +20,31 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-    int[] final = new int[a.length+b.length];
+    int[] finalArr = new int[a.length+b.length];
     int bLen = 0;
     int aLen = 0;
-    while(aLen<a.length || bLen<b.length){
+    while(aLen<a.length && bLen<b.length){
       if(a[aLen]<=b[bLen]){
-        final[aLen+bLen]=a[aLen];
+        finalArr[aLen+bLen]=a[aLen];
         aLen++;
       } else {
-        final[aLen+bLen]=b[bLen];
+        finalArr[aLen+bLen]=b[bLen];
         bLen++;
       }
+      if(aLen==a.length){
+        while(bLen<b.length){
+          finalArr[aLen+bLen]=b[bLen];
+          bLen++;
+        }
+      }
+      if(bLen==b.length){
+        while(aLen<a.length){
+          finalArr[aLen+bLen]=a[aLen];
+          aLen++;
+        }
+      }
     }
-    return final;
+    return finalArr;
   }//end merge()
 
 
@@ -42,13 +55,20 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
-    if(arr%2 != 0){
-      int[] arr1 = new int[arr.length/2];
-      int[] arr2 = new int[arr.length/2];
-    } else {
-      int[] arr1 = new int[arr.length/2 + 1];
-      int[] arr2 = new int[arr.length/2];
+    if(arr.length <= 1) {
+      return arr;
     }
+
+    int mid = arr.length / 2;
+    int[] arrLeft = new int[mid];
+    int[] arrRight = new int[arr.length - mid];
+    for(int i = 0; i < mid; i++) {
+      arrLeft[i] = arr[i];
+    }
+    for(int j = 0; j < arrRight.length; j++) {
+      arrRight[j] = arr[arr.length-mid+j-1];
+    }
+    return merge(arrLeft, arrRight);
   }//end sort()
 
 
@@ -64,9 +84,10 @@ public class MergeSort
   //helper method for displaying an array
   public static void printArray( int[] a ) {
     System.out.print("[");
-    for( int i : a )
+    for(int i=0; i<a.length-1; i++){
       System.out.print( i + ",");
-    System.out.println("]");
+    }
+    System.out.println(a[a.length-1] + "]");
   }
   //---------------------------------------------------
 
@@ -74,7 +95,6 @@ public class MergeSort
   //main method for testing
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
       int[] arr0 = {0};
       int[] arr1 = {1};
       int[] arr2 = {1,2};
@@ -100,6 +120,7 @@ public class MergeSort
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );
       printArray( sort( arr7 ) );
+      /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
