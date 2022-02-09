@@ -5,11 +5,11 @@
   Summary of Algorithm:
 
   ***/
-import java.util.*;
+
 
 public class MergeSort
 {
-
+  private int arr;
   /******************************************************
    * int[] merge(int[],int[])
    * Merges two input arrays
@@ -19,19 +19,19 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-    int[] finalArr = new int[a.length + b.length];
+    int[] final = new int[a.length+b.length];
     int bLen = 0;
     int aLen = 0;
-    while(aLen < a.length || bLen < b.length){
+    while(aLen<a.length || bLen<b.length){
       if(a[aLen]<=b[bLen]){
-        finalArr[aLen+bLen]=a[aLen];
+        final[aLen+bLen]=a[aLen];
         aLen++;
       } else {
-        finalArr[aLen+bLen]=b[bLen];
+        final[aLen+bLen]=b[bLen];
         bLen++;
       }
     }
-    return finalArr;
+    return final;
   }//end merge()
 
 
@@ -42,33 +42,15 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
-    /*
     if(arr%2 != 0){
       int[] arr1 = new int[arr.length/2];
       int[] arr2 = new int[arr.length/2];
     } else {
       int[] arr1 = new int[arr.length/2 + 1];
       int[] arr2 = new int[arr.length/2];
-    } */
-    if(arr.length <= 1) {
-      return arr;
     }
-
-    int mid = arr.length / 2;
-    int[] arrLeft = new int[mid];
-    int[] arrRight = new int[arr.length - mid];
-
-    for(int i = 0; i < mid; i++) {
-      arrLeft[i] = arr[i];
-    }
-    for(int j = 0; j < arrRight.length; j++) {
-      arrRight[j] = arr[j];
-    }
-
-    arrRight = sort(arrRight);
-    arrLeft = sort(arrLeft);
-    return merge(arrLeft, arrRight);
   }//end sort()
+
 
 
   //-------------------HELPERS-------------------------
@@ -92,7 +74,7 @@ public class MergeSort
   //main method for testing
   public static void main( String [] args )
   {
-
+    /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
       int[] arr0 = {0};
       int[] arr1 = {1};
       int[] arr2 = {1,2};
@@ -118,7 +100,7 @@ public class MergeSort
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );
       printArray( sort( arr7 ) );
-
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
 }//end class MergeSort
