@@ -42,15 +42,33 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
+    /*
     if(arr%2 != 0){
       int[] arr1 = new int[arr.length/2];
       int[] arr2 = new int[arr.length/2];
     } else {
       int[] arr1 = new int[arr.length/2 + 1];
       int[] arr2 = new int[arr.length/2];
+    } */
+    if(arr.length <= 1) {
+      return arr;
     }
-  }//end sort()
 
+    int mid = arr.length / 2;
+    int[] arrLeft = new int[mid];
+    int[] arrRight = new int[arr.length - mid];
+
+    for(int i = 0; i < mid; i++) {
+      arrLeft[i] = arr[i];
+    }
+    for(int j = 0; j < arrRight.length; j++) {
+      arrRight[i] = arr[i];
+    }
+
+    arrRight = sort(arrRight);
+    arrLeft = sort(arrLeft);
+    return merge(arrLeft, arrRight);
+  }//end sort()
 
 
   //-------------------HELPERS-------------------------
