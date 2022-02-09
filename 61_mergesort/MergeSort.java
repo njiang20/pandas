@@ -9,7 +9,6 @@
 
 public class MergeSort
 {
-  private int arr;
   /******************************************************
    * int[] merge(int[],int[])
    * Merges two input arrays
@@ -19,10 +18,10 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-    int[] final = new int[a.length+b.length];
+    int[] final = new int[a.length + b.length];
     int bLen = 0;
     int aLen = 0;
-    while(aLen<a.length || bLen<b.length){
+    while(aLen < a.length || bLen < b.length){
       if(a[aLen]<=b[bLen]){
         final[aLen+bLen]=a[aLen];
         aLen++;
@@ -92,7 +91,7 @@ public class MergeSort
   //main method for testing
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
+
       int[] arr0 = {0};
       int[] arr1 = {1};
       int[] arr2 = {1,2};
@@ -118,7 +117,7 @@ public class MergeSort
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );
       printArray( sort( arr7 ) );
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
   }//end main()
 
 }//end class MergeSort
