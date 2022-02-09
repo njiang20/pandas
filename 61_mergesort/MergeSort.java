@@ -19,19 +19,19 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-    int[] final = new int[a.length + b.length];
+    int[] finalArr = new int[a.length + b.length];
     int bLen = 0;
     int aLen = 0;
     while(aLen < a.length || bLen < b.length){
       if(a[aLen]<=b[bLen]){
-        final[aLen+bLen]=a[aLen];
+        finalArr[aLen+bLen]=a[aLen];
         aLen++;
       } else {
-        final[aLen+bLen]=b[bLen];
+        finalArr[aLen+bLen]=b[bLen];
         bLen++;
       }
     }
-    return final;
+    return finalArr;
   }//end merge()
 
 
@@ -62,7 +62,7 @@ public class MergeSort
       arrLeft[i] = arr[i];
     }
     for(int j = 0; j < arrRight.length; j++) {
-      arrRight[i] = arr[i];
+      arrRight[j] = arr[j];
     }
 
     arrRight = sort(arrRight);
