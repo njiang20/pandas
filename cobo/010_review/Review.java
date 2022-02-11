@@ -99,13 +99,20 @@ public class Review {
   }
 
   public static double totalSentiment(String fileName) {
-    double totalSentiment = 0.0;
     String temp = "";
+    double totalSentiment = 0.0;
     String test = textToString(fileName);
+    test = removePunctuation(test);
 
-    for(i = 0; i < test.length(); i++) {
-      removePunctuation(review.substring(i));
+    for(int i = 0; i < test.length(); i++){
+      if(test.substring(i, i + 1).equals(" ")){
+        totalSentiment += sentimentVal(temp);
+        temp = "";
+      } else {
+        temp += test.substring(i, i + 1);
+      }
     }
+    return totalSentiment;
   }
 
 
