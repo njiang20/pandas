@@ -111,10 +111,40 @@ public class Review {
       } else {
         temp += test.substring(i, i + 1);
       }
-    }
+    } //end for loop
     return totalSentiment;
-  }
+  } //end totalSentiment
 
+  public static String fakeReview(String fileName) {
+  String review = textToString(fileName);
+  String fake = "";
+
+  for(int i = 0; i < review.length() - 1; i++){
+    if(review.substring(i, i + 1).equals("*")){
+      String temp = "";
+      boolean isWord = true;
+      i++;
+
+      while(isWord){
+        temp += review.substring(i, i + 1);
+        i++;
+
+        if(review.substring(i, i + 1).equals(" ")){
+          isWord = false;
+        }
+
+      } //end while loop
+
+      temp = randomAdjective() + " ";
+      temp = removePunctuation(temp);
+      fake += temp;
+    } else {
+      fake += review.substring(i, i + 1);
+    } //end if-else
+
+  } //end for loop
+  return fake;
+} //end fakeReview
 
 
 
