@@ -207,11 +207,6 @@ public class Review {
     }
   }
 
-
-
-
-   //removes punctuation
-
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none
    */
@@ -295,6 +290,7 @@ public class Review {
   public static void main(String[] args) {
     System.out.println(sentimentVal("cold"));
     System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(totalSentiment("TestReview.txt"));
 
     System.out.println(fakeReview("fakeReview.txt"));
     System.out.println(fakeReviewStronger("fakeReview.txt"));
