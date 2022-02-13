@@ -37,7 +37,7 @@ public class Review {
       Scanner input = new Scanner(new File("positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
-        System.out.println(temp);
+        //System.out.println(temp);
         posAdjectives.add(temp);
       }
       input.close();
@@ -135,9 +135,9 @@ public class Review {
 
       } //end while loop
 
-      temp = randomAdjective() + " ";
+      temp = randomAdjective();
       temp = removePunctuation(temp);
-      fake += temp;
+      fake += temp + " ";
     } else {
       fake += review.substring(i, i + 1);
     } //end if-else
@@ -218,5 +218,6 @@ public class Review {
 
   public static void main(String[] args) {
     System.out.println(sentimentVal("cold"));
+    System.out.println(fakeReview("fakeReview.txt"));
   }
 }
