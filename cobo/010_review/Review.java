@@ -146,6 +146,21 @@ public class Review {
   return fake;
 } //end fakeReview
 
+  public static int starRating(String fileName) {
+    double totalSentiment = totalSentiment(fileName);
+    if(totalSentiment >= 15) {
+      return 4;
+    } else if(totalSentiment >= 10) {
+      return 3;
+    } else if(totalSentiment >= 5) {
+      return 2;
+    } else if(totalSentiment >= 0) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
 
 
 
@@ -219,5 +234,6 @@ public class Review {
   public static void main(String[] args) {
     System.out.println(sentimentVal("cold"));
     System.out.println(fakeReview("fakeReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
   }
 }
