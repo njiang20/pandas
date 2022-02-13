@@ -269,11 +269,29 @@ public class Review {
     }
   }
 
+  public static int fakeStarRating(String fileName) {
+    double totalSentiment = totalSentiment(fileName);
+    if(totalSentiment >= 15) {
+      return 0;
+    } else if(totalSentiment >= 10) {
+      return 1;
+    } else if(totalSentiment >= 5) {
+      return 3;
+    } else if(totalSentiment >= 0) {
+      return 2;
+    } else {
+      return 4;
+    }
+  }
+
   public static void main(String[] args) {
     System.out.println(sentimentVal("cold"));
     System.out.println(totalSentiment("SimpleReview.txt"));
+
     System.out.println(fakeReview("fakeReview.txt"));
-    System.out.println(starRating("SimpleReview.txt"));
     System.out.println(fakeReviewStronger("fakeReview.txt"));
+
+    System.out.println(starRating("SimpleReview.txt"));
+    System.out.println(fakeStarRating("SimpleReview.txt"));
   }
 }
