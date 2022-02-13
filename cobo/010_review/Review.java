@@ -116,35 +116,73 @@ public class Review {
   } //end totalSentiment
 
   public static String fakeReview(String fileName) {
-  String review = textToString(fileName);
-  String fake = "";
+    String review = textToString(fileName);
+    String fake = "";
 
-  for(int i = 0; i < review.length() - 1; i++){
-    if(review.substring(i, i + 1).equals("*")){
-      String temp = "";
-      boolean isWord = true;
-      i++;
-
-      while(isWord){
-        temp += review.substring(i, i + 1);
+    for(int i = 0; i < review.length() - 1; i++){
+      if(review.substring(i, i + 1).equals("*")){
+        String temp = "";
+        boolean isWord = true;
         i++;
 
-        if(review.substring(i, i + 1).equals(" ")){
-          isWord = false;
-        }
+        while(isWord){
+          temp += review.substring(i, i + 1);
+          i++;
 
-      } //end while loop
+          if(review.substring(i, i + 1).equals(" ")){
+            isWord = false;
+          }
 
-      temp = randomAdjective();
-      temp = removePunctuation(temp);
-      fake += temp + " ";
-    } else {
-      fake += review.substring(i, i + 1);
-    } //end if-else
+        } //end while loop
 
-  } //end for loop
-  return fake;
-} //end fakeReview
+        temp = randomAdjective();
+        temp = removePunctuation(temp);
+        fake += temp + " ";
+      } else {
+        fake += review.substring(i, i + 1);
+      } //end if-else
+
+    } //end for loop
+    return fake;
+  } //end fakeReview
+
+
+  public static String fakeReviewStronger(String fileName) {
+    String review = textToString(fileName);
+    String fake = "";
+
+    for(int i = 0; i < review.length() - 1; i++){
+      if(review.substring(i, i + 1).equals("*")){
+        String temp = "";
+        boolean isWord = true;
+        i++;
+
+        while(isWord){
+          temp += review.substring(i, i + 1);
+          i++;
+
+          if(review.substring(i, i + 1).equals(" ")){
+            isWord = false;
+          } //end if
+
+        } //end while loop
+
+        temp = removePunctuation(temp);
+        if (sentimentVal(temp) > 0) {
+          temp = randomNegativeAdj() + " ";
+        } else if (sentimentVal(temp) < 0) {
+          temp = randomPositiveAdj() + " ";
+        } else {
+          temp = randomAdjective() + " ";
+        } //end if-else
+        fake += temp;
+      } else {
+        fake += review.substring(i, i + 1);
+      } //end first if
+    } //end for loop
+    return fake;
+  } //end fakeReview
+
 
   public static int starRating(String fileName) {
     double totalSentiment = totalSentiment(fileName);
@@ -233,7 +271,9 @@ public class Review {
 
   public static void main(String[] args) {
     System.out.println(sentimentVal("cold"));
+    System.out.println(totalSentiment("SimpleReview.txt"));
     System.out.println(fakeReview("fakeReview.txt"));
     System.out.println(starRating("SimpleReview.txt"));
+    System.out.println(fakeReviewStronger("fakeReview.txt"));
   }
 }
