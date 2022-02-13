@@ -1,3 +1,11 @@
+/*
+Watermelon (Lea Kwok, Nina Jiang, Lawrence Joa)
+APCS pd7
+L06: Read/Review/Expand
+2022-02-14
+time spent: 1.5 hr
+*/
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
