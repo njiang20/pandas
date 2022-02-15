@@ -1,5 +1,5 @@
 public class factorial {
-    public int factorial(int n) {
+    public static int factorial(int n) {
         if(n == 1) {
         return n;
     } else {
@@ -7,4 +7,7 @@ public class factorial {
        }
     }
 
+    public static void main(String[] args) {
+      System.out.println(factorial(4));
+    }
 }
