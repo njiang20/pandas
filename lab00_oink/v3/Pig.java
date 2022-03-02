@@ -1,7 +1,7 @@
 /**
 Added capitilation rule: If first letter in english is uppercap then first letter in piglatin must be uppercap
 **/
-
+   
 import java.util.Scanner;
 
 public class Pig {

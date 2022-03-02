@@ -1,7 +1,7 @@
 /**
 Added punctuation and added some comments to try and make sense of stuff
 **/
-
+   
 import java.util.Scanner;
 
 public class Pig {
@@ -222,7 +222,7 @@ long version using for
 			System.out.print(engToPig(sc.next()) + " "); //trying to take in phrase and outputting onto one line
 			if (sc.next().equals("\n")) {  //doesn't work how make java recognize new line????
 				System.out.println();
-			}
+			} 
 		}
 	}//end main()
 

@@ -1,7 +1,7 @@
 /**
 Added punctuation and added some comments to try and make sense of stuff
 **/
-
+   
 import java.util.Scanner;
 
 public class Pig {

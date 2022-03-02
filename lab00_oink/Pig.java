@@ -18,7 +18,7 @@ NEW IN v5:
 NTS: If I am alive after this, come back and review code, and add comments for future self to understand
      format it better as well
 **/
-
+   
 import java.util.Scanner;
 
 public class Pig {

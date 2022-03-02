@@ -1,7 +1,7 @@
 /**
 Added exception of y and combined some code to make it more efficient and less redundant
 **/
-
+   
 import java.util.Scanner;
 
 public class Pig {
