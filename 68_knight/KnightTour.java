@@ -59,14 +59,14 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    //tf.findTour( 2, 2, 1 );
+    tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    int startX = (int)(n * Math.random());
-    int startY = (int)(n * Math.random());
-    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    //int startX = (int)(n * Math.random());
+    //int startY = (int)(n * Math.random());
+    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +83,7 @@ class TourFinder
   //instance vars
   private int[][] _board;
   private int _sideLength; //board has dimensions n x n
-  private boolean _solved = true;
+  private boolean _solved = false;
 
   //constructor -- build board of size n x n
   public TourFinder( int n )
@@ -162,10 +162,10 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( _solved ) System.exit(0);
+    if ( this._solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == (_board[0].length) * (_board[0].length) + 1  ) {
+    if ( moves == (this._sideLength)*(this._sideLength)  ) {
       //???
       System.out.println( this ); //refresh screen
       return;
