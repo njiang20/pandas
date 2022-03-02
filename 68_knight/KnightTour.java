@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
+// Watermelon: Lea Kwok, Nina Jiang, Lawrence Joa
+// APCS pd7
 // HW68 -- recursively probing for a closed cycle
-// 2022-02-28m
-// time spent:  hrs
+// 2022-03-02
+// time spent: 1.5 hrs
 
 /***
  * SKELETON
@@ -20,12 +20,13 @@
  *
  * QCC
  *
- * Mean execution times for boards of size n*n:
- * n=5   0.124s    across __ executions
- * n=6   0.155s    across __ executions
- * n=7   0.093s    across __ executions
- * n=8   0.0096s    across __ executions
+ * Mean execution times(real time) for boards of size n*n:
+ * n=5   1.579s    across 5 executions
+ * n=6   20.198s    across 3 executions
+ * n=7   11min 16.567s    across 1 execution
+ * n=8   15min 7.039s    across 1 execution
  *
+ * Note: All executions were done from top left corner
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
  *
@@ -59,14 +60,14 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    //tf.findTour( 2, 2, 1 );
+    tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    int startX = (int)(n * Math.random());
-    int startY = (int)(n * Math.random());
-    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    // int startX = (int)(n * Math.random());
+    // int startY = (int)(n * Math.random());
+    // tf.findTour( startX+2, startY+2, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,13 +166,15 @@ class TourFinder
     if ( this._solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == (_board.length)*(_board.length)  ) {
+    if ( moves > (_board.length-4)*(_board.length-4)  ) {
       //???
       System.out.println( this ); //refresh screen
+      _solved = true;
       return;
     }
     //other base case: stepped off board or onto visited cell
     if ( _board[x][y] != 0 ) {
+      moves--;
       return;
     }
     //otherwise, mark current location
@@ -180,8 +183,9 @@ class TourFinder
 
       //mark current cell with current move number
       _board[x][y] = moves;
+      moves++;
 
-      //System.out.println( this ); //refresh screen
+      System.out.println( this ); //refresh screen
 
       //delay(1000); //uncomment to slow down enough to view
 
@@ -196,19 +200,20 @@ class TourFinder
       ******************************************/
       //???
 
-      findTour(x + 1, y - 2, moves++); // a
-      findTour(x + 2, y - 1, moves++); // b
-      findTour(x + 2, y + 1, moves++); // c
-      findTour(x + 1, y + 2, moves++); // d
-      findTour(x - 1, y + 2, moves++); // e
-      findTour(x - 2, y + 1, moves++); // f
-      findTour(x - 2, y - 1, moves++); // g
-      findTour(x - 1, y - 2, moves++); // h
+      findTour(x + 1, y + 2, moves); // a
+      findTour(x + 2, y + 1, moves); // b
+      findTour(x + 2, y - 1, moves); // c
+      findTour(x + 1, y - 2, moves); // d
+      findTour(x - 1, y - 2, moves); // e
+      findTour(x - 2, y - 1, moves); // f
+      findTour(x - 2, y + 1, moves); // g
+      findTour(x - 1, y + 2, moves); // h
 
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
         //???
+
         _board[x][y] = 0;
 
       System.out.println( this ); //refresh screen
