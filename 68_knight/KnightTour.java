@@ -196,14 +196,6 @@ class TourFinder
       ******************************************/
       //???
 
-      findTour(x+1, y+2, moves+1);
-      findTour(x+2, y+1, moves+1);
-      findTour(x+2, y-1, moves+1);
-      findTour(x+1, y-2, moves+1);
-      findTour(x-1, y-2, moves+1);
-      findTour(x-2, y-1, moves+1);
-      findTour(x-2, y+1, moves+1);
-      findTour(x-1, y+2, moves+1);
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
