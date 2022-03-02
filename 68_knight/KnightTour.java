@@ -59,14 +59,14 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    //tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //int startY = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    int startX = (int)(n * Math.random());
+    int startY = (int)(n * Math.random());
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
