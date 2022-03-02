@@ -21,10 +21,10 @@
  * QCC
  *
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   0.124s    across __ executions
+ * n=6   0.155s    across __ executions
+ * n=7   0.093s    across __ executions
+ * n=8   0.0096s    across __ executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -59,14 +59,14 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    //tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = (int)(n * Math.random());
-    //int startY = (int)(n * Math.random());
-    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    int startX = (int)(n * Math.random());
+    int startY = (int)(n * Math.random());
+    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
