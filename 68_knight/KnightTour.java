@@ -165,7 +165,7 @@ class TourFinder
     if ( this._solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == (this._sideLength)*(this._sideLength)  ) {
+    if ( moves == (_board.length)*(_board.length)  ) {
       //???
       System.out.println( this ); //refresh screen
       return;
@@ -181,7 +181,7 @@ class TourFinder
       //mark current cell with current move number
       _board[x][y] = moves;
 
-      System.out.println( this ); //refresh screen
+      //System.out.println( this ); //refresh screen
 
       //delay(1000); //uncomment to slow down enough to view
 
@@ -195,6 +195,15 @@ class TourFinder
        *     . h . a .
       ******************************************/
       //???
+
+      findTour(x + 1, y - 2, moves++); // a
+      findTour(x + 2, y - 1, moves++); // b
+      findTour(x + 2, y + 1, moves++); // c
+      findTour(x + 1, y + 2, moves++); // d
+      findTour(x - 1, y + 2, moves++); // e
+      findTour(x - 2, y + 1, moves++); // f
+      findTour(x - 2, y - 1, moves++); // g
+      findTour(x - 1, y - 2, moves++); // h
 
 
       //If made it this far, path did not lead to tour, so back up...
