@@ -171,7 +171,7 @@ class TourFinder
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( x > _sideLength ) {
+    if ( _board[x][y] != 0 ) {
       return;
     }
     //otherwise, mark current location
