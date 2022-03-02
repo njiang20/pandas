@@ -15,7 +15,7 @@
  * $ java KnightTour [N]
  *
  * ALGO
- *
+ *   Random moves are generated. If there is no solution, the program backtracks.
  * DISCO
  *
  * QCC
