@@ -7,8 +7,8 @@ Time spent:
 In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
     n = 5       26.711s
     n = 6       9min 20.467s
-    n = 7
-    n = 8
+    n = 7       14min 56s
+    n = 8       15m 12.3s
 
 q0: From any starting position, can an open tour always be found? Explain.
     When a solution does exist, an open tour can always be found because open tours have less restrictions than closed tours.
