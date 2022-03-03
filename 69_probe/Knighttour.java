@@ -58,14 +58,14 @@ public class KnightTour
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use a line below:
     //tf.findTour( 2, 2, 1 ); //upper left corner
-    //tf.findTour( 6, 2, 1 ); //upper right corner
+    tf.findTour( 6, 2, 1 ); //upper right corner
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    int startX = 2 + (int)( n * Math.random() );
-    int startY = 2 + (int)( n * Math.random() );
-    tf.findTour( startX, startY, 1 );   // 1 or 0 ?
+    //int startX = 2 + (int)( n * Math.random() );
+    //int startY = 2 + (int)( n * Math.random() );
+    //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +176,7 @@ class TourFinder
 
       System.out.println( this ); //refresh screen
 
-      delay(1000); //uncomment to slow down enough to view probings
+      //delay(1000); //uncomment to slow down enough to view probings
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
