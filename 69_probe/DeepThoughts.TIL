@@ -1,0 +1,19 @@
+Nina Jiang, Samantha Hua, Nada Hameed
+APCS07
+HW69--Making Sense
+03-02-21
+Time spent:
+
+In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
+
+* n=5   1.579s    across 5 executions
+* n=6   20.198s    across 3 executions
+* n=7   11min 16.567s    across 1 execution
+* n=8   15min 7.039s    across 1 execution
+
+q0: From any starting position, can an open tour always be found? Explain.
+
+q1: Same, but for closed tour.
+q2: How do you explain the increase in execution time as n increases?
+q3: Thoughts on optimization?
+State your cleanest algo for finding your way out of a maze (of the “2D” style discussed in class).
