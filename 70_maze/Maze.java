@@ -15,11 +15,11 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ *  Similar to KnightTour, we would check if there are available moves from the current position of the hero with left side preference clockwise. We would only need a moat of depth 1 since the hero would only move 1 space at a time. If the hero reaches a dead end, it would backtrack and reset the '.' to '#'. There are only 4 recursive calls since the hero can only move horizontally or vertically. The program ends when the hero reaches the space marked with '$'.
  *
- * DISCO
+ * DISCO:
  *
- * QCC
+ * QCC:
  *
  ***/
 
