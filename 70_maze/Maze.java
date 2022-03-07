@@ -134,27 +134,38 @@ class MazeSolver
 	     System.exit(0);
     }
     //other base cases
-    else if ( !(_maze[x][y] == '#')) {
+    else if (_maze[x][y] == EXIT) {
       return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-	//???
-    //  System.out.println( this ); //refresh screen
+      System.out.println( this ); //refresh screen
 
-      solve(x, y + 1); // north
-      solve(x + 1, y); // east
-      solve(x, y - 1); // south
-      solve(x - 1, y); // west
+      if (_maze[x][y + 1] == PATH || _maze[x][y] == EXIT) {
+        solve(x, y + 1); // north
+      }
 
+      if (_maze[x + 1][y] == PATH || _maze[x][y] == EXIT) {
+        solve(x + 1, y); // east
+      }
+
+      if (_maze[x][y - 1] == PATH || _maze[x][y] == EXIT) {
+        solve(x, y - 1); // south
+      }
+
+      if (_maze[x - 1][y] == PATH || _maze[x][y] == EXIT) {
+        solve(x - 1, y); // west
+      }
+
+      _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y ) {
-    while(!(_maze[x + 1][y + 1] == '#')) { //while the path is not a #, the starting x,y will continue to reset until there is a valid starting point.
+    while(!(_maze[x + 1][y + 1] == PATH)) { //while the path is not a #, the starting x,y will continue to reset until there is a valid starting point.
       x = (int)(w * Math.random());
       y = (int)(h * Math.random());
     }
