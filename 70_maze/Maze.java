@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
+// Team PigeonHaters -- Nina Jiang, Samantha Hua, Nada Hameed
+// APCS pd7
 // HW69 -- maze solving (blind, depth-first)
-// 2022-03-03r
-// time spent:  hrs
+// 2022-03-07
+// time spent: 1 hrs
 
 /***
  * SKEELTON for
