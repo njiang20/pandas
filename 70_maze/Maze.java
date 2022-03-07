@@ -140,6 +140,7 @@ class MazeSolver
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
+      _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
 
       if (_maze[x][y + 1] == PATH || _maze[x][y] == EXIT) {
