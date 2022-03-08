@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
+// Watermelon - Lea Kwok, Nina Jiang, Lawrence Joa
+// APCS pd7
 // HW71 -- Reading for intent, tracing for VICTORY
 // 2022-03-07m
-// time spent:  hrs
+// time spent: .7 hrs
 
 /***
  * SKEELTON for
@@ -29,14 +29,18 @@
  *     swap arr[b], arr[s]
  *
  * DISCO
- *
+ * When running mysterion for all values of c for a given array, the result is a
+ * fully sorted array
  * QCC
+ * Is this supposed to be a sorting algo?
  *
  * q0: What does it do?
- * a0:
+ * a0: splits array, a and b being the lower and upper bound being affected,
+ * and c being the number that separates all values lower than c to the left,
+ * and all values higher to the right
  *
  * q1: O(?)
- * a1:
+ * a1: O(N)
  *
  ***/
 import java.util.Arrays;
