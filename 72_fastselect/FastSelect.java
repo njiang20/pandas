@@ -8,6 +8,7 @@ time spent: 1.0 hr
 
 /*
 ALGO:
+  Partitions the array n times and returns the y-1 index in the array.
 
 BEST CASE SCENARIO/WORST CASE SCENARIO:
   There is no best or worse case- The run time will be O(n^2) because the run time of the partition is O(n) e for loop is also O(n).
