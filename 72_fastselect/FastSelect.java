@@ -1,3 +1,24 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW72 -- So So Fast
+2022-03-8
+time spent: 1.0 hr
+*/
+
+/*
+ALGO:
+
+BEST CASE SCENARIO/WORST CASE SCENARIO:
+  There is no best or worse case- The run time will be O(n^2) because the run time of the partition is O(n) e for loop is also O(n).
+DISCO:
+  When we run the code, sometimes the array ends up fully sorted by partition. Other times it will not be.
+
+QCC:
+  Is there a more efficient way to write FastSelect?
+  What happens if there are duplicates of one variable?
+*/
+
 import java.util.Arrays;
 
 public class FastSelect
@@ -53,7 +74,7 @@ public class FastSelect
    * @return int
    *
    */
-  public static int[] mysterion( int arr[], int a, int b, int c)
+  public static int partition( int arr[], int a, int b, int c)
   {
     int v = arr[c];
     swap(c, b, arr);
@@ -65,68 +86,50 @@ public class FastSelect
       }
     }
     swap(b, s, arr);
-    return arr;
-  }//end mysterion
+    return s;
+  }//end partition
 
-  // public static int fastSelect(int[] arr, int a, int b, int c, int y) {
-  //
-  // }
-
-
-
+  public static int fastSelect(int[] arr, int y) {
+    for (int i = 0; i < arr.length; i++){
+      partition(arr, 0, arr.length-1, y-1);
+    }
+    return arr[y-1];
+  }
 
   //main method for testing
   public static void main( String[] args )
   {
-    //init test arrays of magic numbers
+    int[] bob = {7, 1, 5 ,3, 12};
+    printArr(bob);
+    fastSelect(bob, 2);
+    printArr(bob);
+    System.out.println(fastSelect(bob, 2));
+
     int[] arr1 = {8,21,17,69,343};
     int[] arr3 = {1,28,33,4982,37};
     int[] arr4 = {5,4,17,9000,6};
     int[] arr5 = {3,0,16,599,1024};
-    // run mysterion on each array,
-    // holding a & b fixed, varying c...
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr1: ");
-    printArr(arr1);
-    mysterion(arr1,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr1);
-    System.out.println("-----------------------");
-    System.out.println("arr3:");
-    printArr(arr3);
-    mysterion(arr3,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr3);
-    System.out.println("-----------------------");
-    System.out.println("arr4:");
-    printArr(arr4);
-    mysterion(arr4,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr4);
-    System.out.println("-----------------------");
-    System.out.println("arr5:");
-    printArr(arr5);
-    mysterion(arr5,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr5);
-    System.out.println("-----------------------");
-    }
-    int[] arr6 = buildArray(10,50);
-    for( int testC2 = 0; testC2 < 10; testC2++ ) {
-      System.out.println("arr6: ");
-      printArr(arr6);
-      mysterion(arr6,0,9,testC2);
-      System.out.println("after mysterion w/ a=0,b=4,c="
-      + testC2 +"...");
-      printArr(arr6);
-    }
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    printArr(arr1);
+    fastSelect(arr1, 2);
+    printArr(arr1);
+    System.out.println(fastSelect(arr1, 2));
+
+    printArr(arr3);
+    fastSelect(arr3, 2);
+    printArr(arr3);
+    System.out.println(fastSelect(arr3, 2));
+
+    printArr(arr4);
+    fastSelect(arr4, 2);
+    printArr(arr4);
+    System.out.println(fastSelect(arr4, 2));
+
+    printArr(arr5);
+    fastSelect(arr5, 2);
+    printArr(arr5);
+    System.out.println(fastSelect(arr5, 2));
+
   }//end main
 
-}//end class Mysterion
+}//end class FastSelect
