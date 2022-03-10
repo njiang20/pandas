@@ -1,22 +1,25 @@
-//Clyde Sinclair
-//APCS pd0
-//HW72 -- QuickSort
-//2022-03-09w
-//time spent: _h
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW73 -- All About the About Face
+2022-03-9
+time spent: 1.0 hr
+*/
 
 /***
  * class QuickSort
  * Implements quicksort algo to sort an array of ints in place
  *
  * 1. Summary of QuickSort algorithm:
- * QSort(arr):
- *
+ *  uses a for loop to run quickSelect n times, finding the i lowest value everytime
+ *  and sets it to the arr[i] value in the array
  * 2a. Worst pivot choice and associated run time:
- *
+ *  When the pivot is an extreme, like the highest or lowest value in the array the runtime is O(n^2)
  * 2b. Best pivot choice and associated run time:
- *
+ *  When the pivot is in the center, the runtime is O(nlogn)
  * 3. Approach to handling duplicate values in array:
- *
+ *  In addition to the original for loop in quickSelect, we added three more if statements that
+ *  decrease the length of the subarray being partitioned every run.
  **/
 
 public class QuickSort
@@ -70,34 +73,13 @@ public class QuickSort
   public static void qsort( int[] d )
   {
     int[] sorted = new int[d.length];
-    for(int i = 0; i < d.length; i++) {
-      sorted[i] = quickSelect(d, i);
+    for(int i = 1; i < d.length; i++) {
+      sorted[i] = QuickSelect.quickSelect(d, i);
     }
     d = sorted;
   }
 
-
-  public static int quickSelect(int[] arr, int y) {
-    int lo = 0;
-    int hi = arr.length - 1;
-
-    for (int i = lo; i < hi; i++){
-      int output = partition(arr, lo, hi, y-1);
-      if(output == y - 1) {
-        return arr[output];
-      } else if (output < y - 1) {
-        lo += 1;
-      } else if (output > y - 1) {
-        hi -= 1;
-      }
-    }
-    return arr[y-1];
-  }
-
   //you may need a helper method...
-
-
-
 
 
   //main method for testing
@@ -130,7 +112,6 @@ public class QuickSort
     printArr(arrN);
 
 
-    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
 
     //get-it-up-and-running, static test case w/ dupes:
     int [] arr2 = {7,1,5,12,3,7};
@@ -157,7 +138,24 @@ public class QuickSort
     qsort( arrMatey );
     System.out.println("arrMatey after sort: " );
     printArr(arrMatey);
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    System.out.println("\n--------- " );
+
+    int [] best = {3,1,2,4,5,6};
+    System.out.println("\nbest init'd to: " );
+    printArr(best);
+
+    qsort( best );
+    System.out.println("best after qsort: " );
+    printArr(best);
+
+    int [] worst = {6,5,4,3,2,1};
+    System.out.println("\nworst init'd to: " );
+    printArr(worst);
+
+    qsort( worst );
+    System.out.println("worst after qsort: " );
+    printArr(worst);
 
   }//end main
 
