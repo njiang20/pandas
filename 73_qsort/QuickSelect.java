@@ -85,20 +85,13 @@ public class QuickSelect
       if(output == y - 1) {
         return arr[output];
       } else if (output < y - 1) {
-        lo += 1;
+        lo = output;
       } else if (output > y - 1) {
-        hi -= 1;
+        hi = output;
       }
     }
     return arr[y-1];
   }
-
-  // public static int quickSelect(int[] arr, int y) {
-  //   for (int i = 0; i < arr.length; i++){
-  //     partition(arr, 0, arr.length-1, y-1);
-  //   }
-  //   return arr[y-1];
-  //}
 
   //main method for testing
   public static void main( String[] args )
