@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW75 -- Nodal Recall
+2022-03-13
+time spent: .5 hrs
+*/
+
 /***
  * interface List
  * subset of actual Java List interface
