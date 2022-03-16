@@ -12,7 +12,8 @@ QCC:
 * Why does add (at index / insert) return nothing while adding to the beginning of a linked list returns a boolean?
 
 ADD ALGO:
-* Copies the first index-1 values in LList, when it gets to the index at which you want to add...
+* Copies the first index-1 values in LList, when it gets to the index at which you want to add it creates a new LLNode
+  amd sets it to the value of newVal. Then increments size by 1.
 
 REMOVE ALGO:
 * Copies the first index - 1 values in LList. Then create a new LLNode ret and copy the next nodes after the car of
