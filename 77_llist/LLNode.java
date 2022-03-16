@@ -1,9 +1,9 @@
 /*
 Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 APCS pd7
-HW75 -- Nodal Recall
-2022-03-13
-time spent: .5 hrs
+HW77: Insert|Remove
+2022-03-16
+time spent: 1 hrs
 */
 
 /***
