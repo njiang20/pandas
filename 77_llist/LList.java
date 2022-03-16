@@ -21,28 +21,30 @@ public class LList implements List //interface def must be in this dir
   // constructor -- initializes instance vars
   public LList( )
   {
-    _head = null;
+    _head = null; //at birth, a list has no elements
     _size = 0;
   }
 
 
   //--------------v  List interface methods  v--------------
 
+  //insert at specified index
+  public void add( int index, String newVal )
+  {
+    
+  }
+
+  //remove node from list, return its data
+  public String remove( int index )
+  {
+
+  }
+
   public boolean add( String newVal )
   {
-    if (_size == 0) {
-      _head = new LLNode( newVal, null );
-      _size++;
-      return true;
-    }
-    else {
-      LLNode temp = _head;
-      while (temp.getNext() != null){
-        temp = temp.getNext();
-      }
-      temp.setNext( new LLNode( newVal, null ) );
-      _size++;
-    }
+    LLNode tmp = new LLNode( newVal, _head );
+    _head = tmp;
+    _size++;
     return true;
   }
 
@@ -51,52 +53,59 @@ public class LList implements List //interface def must be in this dir
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
-    LLNode temp = _head;
-    for (int i = 0; i < index; i++){
-      temp = temp.getNext();
-    }
-    return temp.getCargo();
+
+    String retVal;
+    LLNode tmp = _head; //create alias to head
+
+    //walk to desired node
+    for( int i=0; i < index; i++ )
+      tmp = tmp.getNext();
+
+    //check target node's cargo hold
+    retVal = tmp.getCargo();
+    return retVal;
   }
 
 
   public String set( int index, String newVal )
   {
+
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
-    LLNode temp = _head;
-    for (int i = 0; i < index; i++){
-      temp = temp.getNext();
-    }
-    return temp.setCargo(newVal);
+
+    LLNode tmp = _head; //create alias to head
+
+    //walk to desired node
+    for( int i=0; i < index; i++ )
+      tmp = tmp.getNext();
+
+    //store target node's cargo
+    String oldVal = tmp.getCargo();
+
+    //modify target node's cargo
+    tmp.setCargo( newVal );
+
+    return oldVal;
   }
 
 
   //return number of nodes in list
-  public int size()
-  {
-    return _size;
-  }
+  public int size() { return _size; }
 
   //--------------^  List interface methods  ^--------------
-
 
 
   // override inherited toString
   public String toString()
   {
-    String output = "(";
-    if (_size == 0){
-      return "(null)";
+    String retStr = "HEAD->";
+    LLNode tmp = _head; //init tr
+    while( tmp != null ) {
+	    retStr += tmp.getCargo() + "->";
+	    tmp = tmp.getNext();
     }
-    for (LLNode temp = _head; temp != null; temp = temp.getNext()) {
-      output += temp.getCargo();
-      if (temp.getNext() != null) {
-        output += " ";
-      } else {
-        output += " " + temp.getNext();
-      }
-    }
-    return output + ")";
+    retStr += "NULL";
+    return retStr;
   }
 
 
@@ -107,37 +116,29 @@ public class LList implements List //interface def must be in this dir
 
     System.out.println( james );
     System.out.println( "size: " + james.size() );
-    System.out.println();
 
     james.add("beat");
     System.out.println( james );
     System.out.println( "size: " + james.size() );
-    System.out.println();
 
     james.add("a");
     System.out.println( james );
     System.out.println( "size: " + james.size() );
-    System.out.println();
 
     james.add("need");
     System.out.println( james );
     System.out.println( "size: " + james.size() );
-    System.out.println();
 
     james.add("I");
     System.out.println( james );
     System.out.println( "size: " + james.size() );
-    System.out.println();
 
     System.out.println( "2nd item is: " + james.get(1) );
-    System.out.println();
 
     james.set( 1, "got" );
     System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
 
     System.out.println( james );
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
 
 }//end class LList
