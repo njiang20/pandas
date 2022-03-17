@@ -12,7 +12,8 @@ DISCO:
 
 QCC:
 * Were we supposed to make any significant changes in our methods? We only changed
-  the varaible type and one line (line 40)
+  the variable type, one line (line 41) in the add method, and a bit of the toString. Everything else was 
+  compilable and ran without editing.
 * When would we use doubly linked lists instead of linked lists?
 
 ADD ALGO:
