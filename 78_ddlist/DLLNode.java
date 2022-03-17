@@ -1,9 +1,28 @@
 /*
 Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 APCS pd7
-HW77: Insert|Remove
-2022-03-16
+HW78: Double Up
+2022-03-17r
 time spent: 1 hrs
+*/
+
+/*
+DISCO:
+* remove() will not work if it does not check for 0.
+
+QCC:
+* Were we supposed to make any significant changes in our methods? We only changed
+  the varaible type and one line (line 32)
+* When would we use doubly linked lists instead of linked lists?
+
+ADD ALGO:
+* Copies the first index-1 values in LList, when it gets to the index at which you want to add it creates a new LLNode
+  amd sets it to the value of newVal. Then increments size by 1.
+
+REMOVE ALGO:
+* Copies the first index - 1 values in LList. Then create a new LLNode ret and copy the next nodes after the car of
+  the initial node, tmp. tmp will set its next node to the next node of the new node (ret). The size decreases by 1
+  and we return the car of ret.
 */
 
 /***

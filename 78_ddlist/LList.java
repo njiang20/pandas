@@ -38,14 +38,20 @@ public class LList implements List //interface def must be in this dir
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
+    String retVal;
     DLLNode tmp = _head;
-    for (int i = 0; i < index - 1; i++) {
-      tmp = tmp.getNext();
+    if ( index == 0 ) {
+      retVal = _head.getCargo();
+      _head = _head.getNext();
     }
-    DLLNode ret = tmp.getNext();
-    tmp.setNext(ret.getNext());
+    else {
+      for( int i=0; i < index-1; i++ )
+        tmp = tmp.getNext();
+      retVal = tmp.getNext().getCargo();
+      tmp.setNext( tmp.getNext().getNext() );
+    }
     _size--;
-    return ret.getCargo();
+    return retVal;
   }
 
   public boolean add( String newVal )
@@ -112,7 +118,7 @@ public class LList implements List //interface def must be in this dir
 	    retStr += tmp.getCargo() + "->";
 	    tmp = tmp.getNext();
     }
-    retStr += "NULL";
+    retStr += "NULL" + "<-TAIL";
     return retStr;
   }
 

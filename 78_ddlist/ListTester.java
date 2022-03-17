@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW78: Double Up
+2022-03-17r
+time spent: 1 hrs
+*/
+
 /***
  * class ListTester
  * ...for putting your LList through its paces
