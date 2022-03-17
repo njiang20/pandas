@@ -4,6 +4,7 @@ APCS pd7
 HW78: Double Up
 2022-03-17r
 time spent: 1 hr
+# of KtS consumed: 2
 */
 
 /*
@@ -12,7 +13,7 @@ DISCO:
 
 QCC:
 * Were we supposed to make any significant changes in our methods? We only changed
-  the variable type, one line (line 41) in the add method, and a bit of the toString. Everything else was 
+  the variable type, one line (line 41) in the add method, and a bit of the toString. Everything else was
   compilable and ran without editing.
 * When would we use doubly linked lists instead of linked lists?
 
