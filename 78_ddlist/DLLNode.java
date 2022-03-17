@@ -3,7 +3,7 @@ Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 APCS pd7
 HW78: Double Up
 2022-03-17r
-time spent: 1 hrs
+time spent: 1 hr
 */
 
 /*
@@ -12,7 +12,7 @@ DISCO:
 
 QCC:
 * Were we supposed to make any significant changes in our methods? We only changed
-  the varaible type and one line (line 32)
+  the varaible type and one line (line 40)
 * When would we use doubly linked lists instead of linked lists?
 
 ADD ALGO:
