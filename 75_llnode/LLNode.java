@@ -57,9 +57,7 @@ public class LLNode
   // override inherited toString
   public String toString()
   {
-    String idk = "(";
-    idk += _value + " " + _nextNode;
-    return idk + ")";
+    return _value;
   }
 
 
@@ -78,11 +76,11 @@ public class LLNode
     //Create a third node after the second
     first.getNext().setNext( new LLNode( "cow", null ) );
 
-    System.out.println( first );
+   // System.out.println( first );
 
     /*A naive list traversal, has side effects.... ?? */
        while( first != null ) {
-         System.out.println( first );
+         System.out.print( first + " " );
          first = first.getNext();
        }
     /**/
