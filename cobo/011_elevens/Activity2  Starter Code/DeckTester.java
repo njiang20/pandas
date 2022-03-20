@@ -1,3 +1,9 @@
+// Team Fried Chicken: Nina Jiang, Lea Kwok, Lindsay Phung
+// APCS pd7
+// L07: But These Go Up To Eleven
+// 2022-03-19
+// Time Spent: 2.0h
+
 /**
  * This is a class that tests the Deck class.
  */
