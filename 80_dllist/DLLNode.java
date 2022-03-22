@@ -53,7 +53,7 @@ public class DLLNode
 
 
   // override inherited toTurtle
-  public Turtle toString() { return _cargo.toString(); }
+  public String toString() { return _cargo.toString(); }
 
 
   //main method for testing

@@ -206,7 +206,7 @@ public class LList implements List //your List.java must be in same dir
 
 
   // override inherited toTurtle
-  public Turtle toString()
+  public String toString()
   {
     String retStr = "HEAD->";
     DLLNode tmp = _head; //init tr
@@ -222,7 +222,7 @@ public class LList implements List //your List.java must be in same dir
   //main method for testing
   public static void main( String[] args )
   {
-    LList james = new LList<Turtle>();
+    LList james = new LList();
 
     System.out.println("initially: " );
     System.out.println( james + "\tsize: " + james.size() );
