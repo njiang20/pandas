@@ -1,10 +1,17 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW80-- Generically Speaking
+2022-03-25f
+time spent: 1 hr
+*/
 /***
  * class DLLNode v1
  * Implements a node, for use in lists and other container classes.
  * Stores a Turtle as cargo.
  **/
 
-public class DLLNode
+public class DLLNode<Turtle>
 {
   private Turtle _cargo;    //cargo may only be of type Turtle
   private DLLNode _nextNode, _prevNode; //pointers to next, prev DLLNodes
@@ -22,9 +29,9 @@ public class DLLNode
   //--------------v  ACCESSORS  v--------------
   public Turtle getCargo() { return _cargo; }
 
-  public DLLNode getNext() { return _nextNode; }
+  public DLLNode<Turtle> getNext() { return _nextNode; }
 
-  public DLLNode getPrev() { return _prevNode; }
+  public DLLNode<Turtle> getPrev() { return _prevNode; }
   //--------------^  ACCESSORS  ^--------------
 
 
@@ -36,16 +43,16 @@ public class DLLNode
     return foo;
   }
 
-  public DLLNode setNext( DLLNode newNext )
+  public DLLNode<Turtle> setNext( DLLNode<Turtle> newNext )
   {
-    DLLNode foo = getNext();
+    DLLNode<Turtle> foo = getNext();
     _nextNode = newNext;
     return foo;
   }
 
-  public DLLNode setPrev( DLLNode newPrev )
+  public DLLNode<Turtle> setPrev( DLLNode<Turtle> newPrev )
   {
-    DLLNode foo = getPrev();
+    DLLNode<Turtle> foo = getPrev();
     _prevNode = newPrev;
     return foo;
   }

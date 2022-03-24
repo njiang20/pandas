@@ -1,13 +1,20 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW80-- Generically Speaking
+2022-03-25f
+time spent: 1 hr
+*/
 /***
  * class LList v3
  * Implements a linked list of DLLNodes, each containing Turtle data
  **/
 
-public class LList implements List //your List.java must be in same dir
+public class LList<Turtle> implements List<Turtle> //your List.java must be in same dir
 {
 
   //instance vars
-  private DLLNode _head, _tail; //pointers to first and last nodes
+  private DLLNode<Turtle> _head, _tail; //pointers to first and last nodes
   private int _size;
 
   // constructor -- initializes instance vars
@@ -37,20 +44,20 @@ public class LList implements List //your List.java must be in same dir
     else if ( index == size() )
       addLast( newVal );
 
-    DLLNode newNode = new DLLNode( newVal, null, null );
+    DLLNode<Turtle> newNode = new DLLNode<Turtle>( newVal, null, null );
 
     //if index==0, insert node before head node
     if ( index == 0 )
       addFirst( newVal );
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<Turtle> tmp1 = _head; //create alias to head
 
       //walk tmp1 to node before desired node
       for( int i=0; i < index-1; i++ )
         tmp1 = tmp1.getNext();
 
       //init a pointer to node at insertion index
-      DLLNode tmp2 = tmp1.getNext();
+      DLLNode<Turtle> tmp2 = tmp1.getNext();
 
       //insert new node
       newNode.setNext( tmp2 );
@@ -75,7 +82,7 @@ public class LList implements List //your List.java must be in same dir
     else if ( index == size()-1 )
       return removeLast();
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<Turtle> tmp1 = _head; //create alias to head
 
       //walk to node before desired node
       for( int i=0; i < index-1; i++ ) {
@@ -103,7 +110,7 @@ public class LList implements List //your List.java must be in same dir
       throw new IndexOutOfBoundsException();
 
     Turtle retVal;
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<Turtle> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -120,7 +127,7 @@ public class LList implements List //your List.java must be in same dir
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<Turtle> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -147,7 +154,7 @@ public class LList implements List //your List.java must be in same dir
   public void addFirst( Turtle newFirstVal )
   {
     //insert new node before first node (prev=null, next=_head)
-    _head = new DLLNode( newFirstVal, null, _head );
+    _head = new DLLNode<Turtle>( newFirstVal, null, _head );
 
     if ( _size == 0 )
       _tail = _head;
@@ -160,7 +167,7 @@ public class LList implements List //your List.java must be in same dir
   public void addLast( Turtle newLastVal )
   {
     //insert new node after last node (prev=_last, next=null)
-    _tail = new DLLNode( newLastVal, _tail, null );
+    _tail = new DLLNode<Turtle>( newLastVal, _tail, null );
 
     if ( _size == 0 )
       _head = _tail;
@@ -209,7 +216,7 @@ public class LList implements List //your List.java must be in same dir
   public String toString()
   {
     String retStr = "HEAD->";
-    DLLNode tmp = _head; //init tr
+    DLLNode<Turtle> tmp = _head; //init tr
     while( tmp != null ) {
       retStr += tmp.getCargo() + "->";
       tmp = tmp.getNext();
@@ -222,7 +229,7 @@ public class LList implements List //your List.java must be in same dir
   //main method for testing
   public static void main( String[] args )
   {
-    LList james = new LList();
+    LList<String> james = new LList<String>();
 
     System.out.println("initially: " );
     System.out.println( james + "\tsize: " + james.size() );

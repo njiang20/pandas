@@ -1,3 +1,10 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW80-- Generically Speaking
+2022-03-25f
+time spent: 1 hr
+*/
 /***
  * class ListTester
  * ...for putting your LList through its paces
@@ -12,37 +19,37 @@ public class ListTester
   {
 
     //instantiate... var type List, obj type LList
-    List wu = new LList<String>();
+    List <Integer> wu = new LList<Integer>();
 
     System.out.println(wu);
-    wu.add("RZA");
+    wu.add(1);
 
     System.out.println(wu);
-    wu.add("GZA");
+    wu.add(2);
 
     System.out.println(wu);
-    wu.add("ODB");
+    wu.add(3);
 
     System.out.println(wu);
-    wu.add("Inspectah Deck");
+    wu.add(4);
 
     System.out.println(wu);
-    wu.add("Raekwon the Chef");
+    wu.add(5);
 
     System.out.println(wu);
-    wu.add("U-God");
+    wu.add(6);
 
     System.out.println(wu);
-    wu.add("Ghostface");
+    wu.add(7);
 
     System.out.println(wu);
-    wu.add("Method Man");
+    wu.add(8);
 
     System.out.println(wu);
 
     for( int i=0; i<7; i++ ) {
       int n = (int)( wu.size() * Math.random() );
-      Turtle imposter = "@";
+      Integer imposter = 2;
       System.out.println("adding imposter at index " + n + "...");
       wu.add( n, imposter );
       System.out.println("Updated list: " + wu);

@@ -1,3 +1,10 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW80-- Generically Speaking
+2022-03-25f
+time spent: 1 hr
+*/
 /***
  * interface List
  * subset of actual Java List interface
@@ -11,7 +18,7 @@
  * ADD-AT-INDEX
  **/
 
-public interface List<Turtle> 
+public interface List<Turtle>
 {
   //add node to list, containing input Turtle as its data
   public boolean add( Turtle x );
