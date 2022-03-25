@@ -28,7 +28,7 @@ time spent: 1 hr
     SUMMARY THE SECOND:
     * It iterates through a List/Set/Map
     * You can use iterator by setting the Iterator it = <variable>.iterator(); variable is the name of the List/Set/Map
-    * It can see if there are more elements, return an element, and remove the element
+    * It can see if there are more elements, return an element, and remove an element
 **/
 
 
