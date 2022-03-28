@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW82-- Roll Your Own Iterator
+2022-03-28m
+time spent: 1 hr
+*/
+
 /***
  * class LList v6
  * Implements a linked list of DLLNodes.
@@ -152,9 +160,9 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
 
   //return an Iterator over this list
-  public /* YOUR CODE HERE */
+  public Iterator<T> iterator()
   {
-    /* YOUR CODE HERE */
+    return new MyIterator();
   }
 
   //--------------------------------------------------------
@@ -254,7 +262,8 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //constructor
     public MyIterator()
     {
-      /* YOUR CODE HERE */
+      _dummy = _head;
+      _okToRemove = false;
     }
 
     //-----------------------------------------------------------
@@ -262,14 +271,20 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //return true if iteration has more elements.
     public boolean hasNext()
     {
-      /* YOUR CODE HERE */
+      if(_dummy.getNext() != null) {
+        _okToRemove = true;
+        return true;
+      }
+      return false;
     }
 
 
     //return next element in this iteration
     public T next()
     {
-      /* YOUR CODE HERE */
+      _dummy = _dummy.getNext();
+      _okToRemove = true;
+      return _dummy.getCargo();
     }
 
 
@@ -278,8 +293,14 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //               (...so that hasNext() will not crash)
     public void remove()
     {
-            /* YOUR CODE HERE */
-    }
+      if(_okToRemove) {
+        DLLNode<T> nextNode = _dummy.getNext();
+        DLLNode<T> prevNode = _dummy.getPrev();
+        nextNode.setPrev(prevNode);
+        prevNode.setNext(nextNode);
+        _size--;
+      }
+    } //:o
     //--------------^  Iterator interface methods  ^-------------
     //-----------------------------------------------------------
   }//*************** end inner class MyIterator ***************
@@ -289,7 +310,6 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     LList james = new LList();
 
     System.out.println("initially: " );
@@ -332,6 +352,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
     System.out.println( "...after remove(0): " + james.remove(0) );
     System.out.println( james + "\tsize: " + james.size() );
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 

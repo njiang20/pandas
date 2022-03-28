@@ -1,0 +1,17 @@
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW82-- Roll Your Own Iterator
+2022-03-28m
+time spent: 1 hr
+
+DISCO:
+  * You can have classes inside of classes
+  * A static nested class is called a static nested class, while a non-static nested
+    class is called an inner class
+
+QCC:
+  * Why do we use the variable _okToRemove?
+  * In line 233 of LList.java:
+    System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
+  * Why does it say the second item is a when we just set it to got?
+  * When would you use a static nested class instead of a non-static one?
