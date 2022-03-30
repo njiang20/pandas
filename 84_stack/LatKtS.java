@@ -8,7 +8,7 @@ time spent: 2 hr
 DISCO:
 
 QCC:
-*
+* Why is there nothing in our new stack?
 */
 
 /***
@@ -96,23 +96,36 @@ public class LatKtS
   public static boolean allMatched( String s )
   {
     Latkes stack = new Latkes(s.length());
-    boolean stillMatch = false;
     if(s.length() == 0) {
-      stillMatch = true;
       return true;
-    }
-    for(int i = 0; i < s.length(); i++) {
-      stack.push(s.substring(i, i+1));
-      if(s.substring(i, i+1).equals("()") ||
-        s.substring(i, i+1).equals("[]") ||
-        s.substring(i, i+1).equals("{}")) {
-          stack.pop();
-          stillMatch = true;
+    } else {
+        for(int i = 0; i < s.length(); i++) {
+          stack.push(s.substring(i, i+1));
+
+          if ( stack.peek().equals("(") && s.substring(i,i+1).equals(")") ) {
+              stack.pop();
+              stack.pop();
+          }
+
+          else if ( stack.peek().equals("[") && s.substring(i,i+1).equals("]") ) {
+              stack.pop();
+              stack.pop();
+          }
+
+
+          else if ( stack.peek().equals("{") && s.substring(i,i+1).equals("}") ) {
+              stack.pop();
+              stack.pop();
+          }
+
+        } //for loop
+
+      } //else
+      if (stack.isEmpty()){
+        return true;
       } else {
-        stillMatch = false;
+        return false;
       }
-    }
-    return stillMatch;
   } //method
 
   //main method to test
