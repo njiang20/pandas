@@ -6,7 +6,8 @@ HW84-- Stack: What Is It Good For?
 time spent: 2 hr
 
 DISCO:
-
+* we could create a peek() in Latkes.java to help us with allMatched
+* the peek() method returns the object at the top of the stack without popping it.
 QCC:
 * Why is there nothing in our new stack?
 */
@@ -48,50 +49,6 @@ public class LatKtS
    *                allMatched( "([)]" )        -> false
    *                allMatched( "" )            -> true
    **/
-  // public static boolean allMatched( String s )
-  // {
-  //   Latkes stack = new Latkes(s.length());
-  //   int count = 0;
-  //   if(s.length() == 0) {
-  //     return true;
-  //   } else {
-  //       stack.push( s.substring(0, 1) );
-  //       for(int i = 1; i < s.length(); i++) {
-  //         stack.push(s.substring(i, i+1));
-  //         count += 1;
-  //
-  //         if ( s.substring(i-1,i).equals("(") ) {
-  //           if ( s.substring(i,i+1).equals(")") ) {
-  //             stack.pop();
-  //             stack.pop();
-  //             count = count - 2;
-  //           }
-  //         }
-  //
-  //         if ( s.substring(i-1,i).equals("[") ) {
-  //           if ( s.substring(i,i+1).equals("]") ) {
-  //             stack.pop();
-  //             stack.pop();
-  //             count = count - 2;
-  //           }
-  //         }
-  //
-  //         if ( s.substring(i-1,i).equals("{") ) {
-  //           if ( s.substring(i,i+1).equals("}") ) {
-  //             stack.pop();
-  //             stack.pop();
-  //             count = count - 2;
-  //           }
-  //         }
-  //
-  //         if (count == 0){
-  //           return true;
-  //         }
-  //
-  //       } //for loop
-  //     } //else
-  //     return false;
-  // } //method
 
   public static boolean allMatched( String s )
   {
