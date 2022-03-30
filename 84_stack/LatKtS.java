@@ -55,34 +55,35 @@ public class LatKtS
     Latkes stack = new Latkes(s.length());
     if(s.length() == 0) {
       return true;
+
     } else {
-        for(int i = 0; i < s.length(); i++) {
-          stack.push(s.substring(i, i+1));
 
-          if ( stack.peek().equals("(") && s.substring(i,i+1).equals(")") ) {
-              stack.pop();
+        stack.push(s.substring(0, 1));
+
+        for(int i = 1; i < s.length(); i++) {
+
+          if ( !stack.isEmpty() && stack.peek().equals("(") && s.substring(i,i+1).equals(")") ) {
               stack.pop();
           }
 
-          else if ( stack.peek().equals("[") && s.substring(i,i+1).equals("]") ) {
-              stack.pop();
+          else if ( !stack.isEmpty() && stack.peek().equals("[") && s.substring(i,i+1).equals("]") ) {
               stack.pop();
           }
 
+          else if ( !stack.isEmpty() && stack.peek().equals("{") && s.substring(i,i+1).equals("}") ) {
+              stack.pop();
+          }
 
-          else if ( stack.peek().equals("{") && s.substring(i,i+1).equals("}") ) {
-              stack.pop();
-              stack.pop();
+          else {
+            stack.push(s.substring(i, i+1));
           }
 
         } //for loop
 
       } //else
-      if (stack.isEmpty()){
-        return true;
-      } else {
-        return false;
-      }
+
+      return stack.isEmpty();
+
   } //method
 
   //main method to test
