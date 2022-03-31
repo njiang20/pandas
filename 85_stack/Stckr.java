@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW85-- Leon Leonwood Stack
+2022-03-31r
+time spent: 1 hrs
+*/
+
 /***
  * class Stckr
  * SKELETON
@@ -11,9 +19,9 @@ public class Stckr
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // USAGE: un-comment exactly 1 assignment below
-    Stack<String> cakes = new ALStack<PANCAKE>();
-    //Stack<String> cakes = new LLStack<PANCAKE>();
-    System.out.println("Is cakes empty?: " + cakes.isEmpty());
+    // Stack<String> cakes = new ALStack<String>();
+    Stack<String> cakes = new LLStack<String>();
+    System.out.println("Is cakes empty?: " + cakes.isEmpty()); //true
     cakes.push("a");
     cakes.push("b");
     cakes.push("c");

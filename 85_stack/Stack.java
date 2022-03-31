@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW85-- Leon Leonwood Stack
+2022-03-31r
+time spent: 1 hrs
+*/
+
 /***
  * interface Stack
  * Specifies actions a stack must be able to perform.

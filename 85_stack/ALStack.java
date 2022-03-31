@@ -1,67 +1,35 @@
-public class ALStack implements Stack<PANCAKE>
-{
-  private ArrayList<String> _stack;
-  private int _stackSize;
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW85-- Leon Leonwood Stack
+2022-03-31r
+time spent: 1 hrs
+*/
 
+import java.util.ArrayList;
 
-  //constructor
-  public ALStack( int initCapacity )
-  {
-    _stack = new ArrayList<String>(initCapacity);
-    _stackSize = 0;
+public class ALStack<PANCAKE> implements Stack<PANCAKE> {
+
+  private ArrayList<PANCAKE> _stack;
+
+  public ALStack() {
+    _stack = new ArrayList<PANCAKE>();
   }
 
-
-  //means of insertion
-  public void push( String s )
-  {
-    //if necessary, create more storage space
-    if ( isFull() ) {
-      ArrayList<String> temp = new ArrayList<String>( _stack.length * 2 );
-      for( int i = 0; i < _stack.length; i++ ) {
-        temp[i] = _stack[i];
-      }
-      _stack = temp; //old _stack freed by JGC
-    }
-    //add new element at end of array
-    //Q: Why is this more efficient than inserting at front?
-    _stack[_stackSize] = s;
-    _stackSize++;
+  public boolean isEmpty() {
+    return _stack.size() == 0;
   }
 
-
-  //means of removal
-  public String pop()
-  {
-    String retStr = "";
-    if ( isEmpty() )  return null;
-    retStr = _stack[ _stackSize---1 ];
-    return retStr;
+  public PANCAKE peekTop() {
+    return _stack.get(_stack.size() - 1);
   }
 
-
-  //chk for emptiness
-  public boolean isEmpty()
-  {
-    return _stackSize == 0;
+  public PANCAKE pop() {
+    return _stack.remove(_stack.size()-1);
   }
 
-  //chk for fullness
-  public boolean isFull()
-  {
-    return _stackSize >= _stack.length;
+  public void push( PANCAKE s ) {
+    _stack.add(s);
   }
 
-  public String peekTop()
-  {
-    return _stack[_stackSize];
-  }
-
-
-
-  //main method for testing
-  public static void main( String[] args )
-  {
-
-  }
 }
