@@ -1,0 +1,13 @@
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW86-- What a Racket
+2022-04-01f
+time spent: 1.5 hrs
+
+DISCO:
+* What is "at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64):" mean?
+We traced through the code, and could not find out why the index exception occurred
+* The method .split is part of the Java Standard Library. We did not import anything to use it.
+
+QCC:
+* How are we supposed to implement the subtraction for the unload method?
