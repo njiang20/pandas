@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW87-- The English Do Not Wait In Line for Soup
+2022-04-04m
+time spent: 1 hrs
+*/
+
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java
