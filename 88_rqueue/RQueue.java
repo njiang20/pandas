@@ -1,3 +1,20 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW88-- BPC Kiddies Do Not Wait in Line Either
+2022-04-05t
+time spent: 1.5 hrs
+*/
+
+/*
+DISCO:
+*
+
+QCC:
+* Is PirateQueue supposed to be a Queue or RQueue
+
+*/
+
 /***
  * class RQueue
  * SKELETON
@@ -25,7 +42,8 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
   // default constructor creates an empty queue
   public RQueue()
   {
-    _front, _end = null;
+    _front = null;
+    _end = null;
     _size = 0;
   }
 
@@ -41,15 +59,18 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
     }
     _size++;
     System.out.println("enqueued " + enQVal);
-  }//O(?)
-
+  }//O(1)
 
   // remove and return thing at front of queue
   // assume _queue ! empty
   public PIKACHU dequeue()
   {
-    PIKACHU retVal = _front.getCargo();
-    _front = _front.getNext();
+    LLNode<PIKACHU> temp = _front;
+    for (int i = 0; i < (int)(_size * Math.random()) - 1; i++){
+      temp = temp.getNext();
+    }
+    PIKACHU retVal = temp.getCargo();
+    temp.setNext(new LLNode<PIKACHU>(retVal, temp.getNext()));
 
     if ( _front == null ) //just moved past last node
       _end = null;      //update _end to reflect emptiness
@@ -57,13 +78,13 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
     _size--;
 
     return retVal;
-  }//O(?)
+  } //O(1)
 
 
   public PIKACHU peekFront()
   {
     return _front.getCargo();
-  }//O(?)
+  }//O(1)
 
 
   /***
@@ -71,16 +92,20 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
    * Algo:
    *   < YOUR SUCCINCT SUMMARY HERE >
    **/
-  public void sample ()
+  public void sample()
   {
-    
-  }//O(?)
+    PIKACHU hihi;
+    for (int i = 0; i < _size; i++){
+      hihi = dequeue();
+      enqueue(hihi);
+    }
+  }//O(n)
 
 
   public boolean isEmpty()
   {
     return _front == null;
-  } //O(?)
+  } //O(1)
 
 
   // print each node, separated by spaces
@@ -96,59 +121,13 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
     return retStr;
   }//end toString()
 
-  /***
-  * class LLNode
-  * Implements a node, for use in lists and other container classes.
-  * Stores its data as a T
-  **/
- public class LLNode<T>
- {
-   //instance vars
-   private T _cargo;    //cargo may only be of type T
-   private LLNode<T> _nextNode; //pointer to next LLNode<T>
-
-   // constructor -- initializes instance vars
-   public LLNode( T value, LLNode<T> next ) {
-     _cargo = value;
-     _nextNode = next;
-   }
-
-
-   //--------------v  ACCESSORS  v--------------
-   public T getCargo() { return _cargo; }
-
-   public LLNode<T> getNext() { return _nextNode; }
-   //--------------^  ACCESSORS  ^--------------
-
-
-   //--------------v  MUTATORS  v--------------
-   public T setCargo( T newCargo ) {
-     T foo = getCargo();
-     _cargo = newCargo;
-     return foo;
-   }
-
-   public LLNode<T> setNext( LLNode<T> newNext ) {
-     LLNode<T> foo = getNext();
-     _nextNode = newNext;
-     return foo;
-   }
-   //--------------^  MUTATORS  ^--------------
-
-
-   // override inherited toString
-   public String toString() { return _cargo.toString(); }
-
- }//end class LLNode
-
 
   //main method for testing
   public static void main( String[] args )
   {
 
-      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
-    Queue<String> PirateQueue = new RQueue<String>();
+    RQueue<String> PirateQueue = new RQueue<String>();
 
     System.out.println("\nnow enqueuing...");
     PirateQueue.enqueue("Dread");
@@ -158,6 +137,7 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
     PirateQueue.enqueue("Peter");
     PirateQueue.enqueue("Stuyvesant");
 
+    PirateQueue.sample();
     System.out.println("\nnow testing toString()...");
     System.out.println( PirateQueue ); //for testing toString()...
 
@@ -173,9 +153,9 @@ public class RQueue<PIKACHU> implements Queue<PIKACHU>
                        "(expect NPE)\n");
     System.out.println( PirateQueue.dequeue() );
 
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main
 
 }//end class RQueue
-
