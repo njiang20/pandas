@@ -1,3 +1,10 @@
+# Team Fried Chicken: Nina Jiang, Lea Kwok, Lindsey Phung
+
+Our experience:
+ * sinbad.jar is a great tool to sort through large data sets and filter to find what you want
+ * Sorting through data is easy when we know what each "column" contains
+ * When handling many parameters for data, it is tedious to put in each individual one
+
 data sets:
 
 § http://www.kaggle.com
@@ -12,5 +19,5 @@ $ javac -classpath .:sinbad.jar -d . Driver.java
 $ java -classpath.:sinbad.jar Driver
 ```
 
-411 on sinbad 
+411 on sinbad
 https://berry-cs.github.io/sinbad/install-java
