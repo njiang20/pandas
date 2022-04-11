@@ -1,5 +1,6 @@
 public class LLQueue<T> implements Queue<T> {
-  public 
+  private _front, _end;
+  private int _size;
 
   public LLQueue() {
 
