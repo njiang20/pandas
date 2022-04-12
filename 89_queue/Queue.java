@@ -4,7 +4,7 @@
  * (Local version, to override built-in Java implementation.)
  **/
 
-public interface Queue<QUASAR>
+public interface Queue<QUASAR> 
 {
   //~~~~~~~~~~~~~~~~~~begin AP subset~~~~~~~~~~~~~~~~~~
   //means of removing an element from collection:
