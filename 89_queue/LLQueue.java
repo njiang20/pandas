@@ -12,7 +12,8 @@ DISCO:
   because peekFirst() returns null when the list is empty, while getFirst() throws a NoSuchElementException
 
 QCC:
-*
+* Is this more effective than RQueue? 
+* Do we need a size variable for ALQ?
 
 */
 

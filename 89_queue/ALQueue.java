@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class ALQueue<T> implements Queue<T> {
   private ArrayList<T> array;
+  private int _size;
 
   public ALQueue(){
     array = new ArrayList<T>();
