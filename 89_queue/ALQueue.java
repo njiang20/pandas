@@ -19,12 +19,13 @@ public class ALQueue<T> implements Queue<T> {
   public T dequeue() {
     if (!isEmpty()){
       array.remove(0);
+      _size--;
     }
     return null;
   } //O(1)
 
   public void enqueue( T x ){
-    if (array.size()>= size) {
+    if (array.size()>= _size) {
       ArrayList<T> temp = new ArrayList<T>(array.size()*2);
       for (T items : array){
         temp.add(items);
@@ -32,6 +33,7 @@ public class ALQueue<T> implements Queue<T> {
       array = temp;
     }
     array.add(x);
+    _size++;
   } //O(1) / O(n)
 
   public boolean isEmpty(){
