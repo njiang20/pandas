@@ -4,7 +4,9 @@ APCS pd7
 HW89-- Queue Two Ways
 2022-04-11t
 time spent: .8 hrs
+*/
 
+/*
 DISCO:
 * It's much easier to code after drawing the encapsulation diagrams + looking at the api
 * We do not need a _front, _end, or _size for LLQ or ALQ
@@ -12,9 +14,8 @@ DISCO:
   because peekFirst() returns null when the list is empty, while getFirst() throws a NoSuchElementException
 
 QCC:
-* Is this more effective than RQueue? 
+* Is this more effective than RQueue?
 * Do we need a size variable for ALQ?
-
 */
 
 import java.util.LinkedList;

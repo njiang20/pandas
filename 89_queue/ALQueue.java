@@ -3,8 +3,9 @@ Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 APCS pd7
 HW89-- Queue Two Ways
 2022-04-11t
-time spent: .5 hrs
+time spent: .8 hrs
 */
+
 
 import java.util.ArrayList;
 
