@@ -1,0 +1,14 @@
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW90-- Swabbing the Deque
+2022-04-12w
+time spent: 1.0 hrs
+
+DISCO:
+* Many of the methods for Deque have the same names as the methods in LinkedList
+* The methods for LinkedList are passed through Deque
+
+QCC:
+* When do we need to use Deque? Why would you use it over normal Queue?
+* How would we implement the offer(), pop(), and removeLastOccurrence() methods?
+* Does pop() make a new stack representation of the Deque and then pop it?
