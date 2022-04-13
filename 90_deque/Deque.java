@@ -1,3 +1,11 @@
+/*
+Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
+APCS pd7
+HW90-- Swabbing the Deque
+2022-04-12w
+time spent: 1 hrs
+*/
+
 public interface Deque<T> {
 
   public void addFirst(T x);
@@ -12,5 +20,5 @@ public interface Deque<T> {
   public int size();
 
   public boolean isEmpty();
-  
+
 }
