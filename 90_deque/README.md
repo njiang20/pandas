@@ -2,7 +2,6 @@ Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 
 APCS pd7
 
-<<<<<<< HEAD
 HW91-- Deque the Halls
 
 2022-04-14r
