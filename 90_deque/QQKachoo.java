@@ -1,12 +1,13 @@
 /*
 Team A Random Word (Nina Jiang, Orion Roven, Ivina Wang )
 APCS pd7
-HW90-- Swabbing the Deque
-2022-04-12w
+HW91-- Deque the Halls
+2022-04-14r
 time spent: 1.0 hrs
 */
 
 import java.util.LinkedList;
+import java.util.Iterator;
 
 public class QQKachoo<T> implements Deque<T> {
 
@@ -47,4 +48,18 @@ public class QQKachoo<T> implements Deque<T> {
   public boolean isEmpty() {
     return _list.isEmpty();
   }
+
+  //extra methods?
+  public boolean contains(T x){
+    return _list.contains(x);
+  }
+
+  public Iterator<T> iterator(){
+    return _list.iterator();
+  }
+
+  public Iterator<T> descendingIterator(){
+    return _list.descendingIterator();
+  }
+
 }
