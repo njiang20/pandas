@@ -1,3 +1,9 @@
+/* Team Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
+APCS
+LAB09 -- Some Folks Call It A Charades / celeb lab
+2022-04-27w
+time spent: 2.0 hrs */
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +24,9 @@ import javax.swing.SpringLayout;
  */
 public class StartPanel extends JPanel
 {
+  private JRadioButton rb;
+  private String celeb;
+
   /**
    * Reference to the Game to call methods.
    */
@@ -113,6 +122,8 @@ public class StartPanel extends JPanel
    */
   public StartPanel(CelebrityGame controller)
   {
+    rb = new JRadioButton("Your Celebrity Type");
+    celeb = "Your celebrity type clue format hint";
     super();
     this.controller = controller;
     this.panelLayout = new SpringLayout();
@@ -177,6 +188,8 @@ public class StartPanel extends JPanel
   private void setupPanel()
   {
     // Adds the RadioButtons to the group so only one can be selected.
+    this.add(rb);
+    typeGroup.add(rb);
   }
 
   /**
@@ -199,7 +212,9 @@ public class StartPanel extends JPanel
 
     //Put your custom radio button info here
 
-    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, rb);
+    panelLayout.putConstraint(SpringLayout.WEST, rb, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.NORTH, rb, 10, SpringLayout.SOUTH, celebrityRadio);
     panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, celebrityRadio);
 
     panelLayout.putConstraint(SpringLayout.NORTH, clueLabel, 10, SpringLayout.SOUTH, answerField);
@@ -242,6 +257,9 @@ public class StartPanel extends JPanel
         {
           addToGame();
         }
+        else if (rb.isSelected()) {
+          Celebrity.validateClue();
+        }
         else
         {
           invalidInput();
@@ -258,7 +276,7 @@ public class StartPanel extends JPanel
      */
     literatureRadio.addActionListener(select -> clueLabel.setText(literatureClue));
     celebrityRadio.addActionListener(select -> clueLabel.setText(celebrityClue));
-
+    rb.addActionListener(select -> clueLabel.setText(yourCelebrityClue));
   }
 
   private void invalidInput()
@@ -275,6 +293,9 @@ public class StartPanel extends JPanel
     if (literatureRadio.isSelected())
     {
       type = "Literature";
+    }
+    else if (rb.isSelected()) {
+      CelebrityRunner();
     }
     String answer = answerField.getText().trim();
     String clue = clueField.getText().trim();
