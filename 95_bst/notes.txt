@@ -18,6 +18,7 @@ QCC
   file. We assume that the default is public.
 * Thanks for the informative comments on top of each method! Very helpful.
 * Trace, trace, trace!
+* We are constantly getting NullPointerExceptions when running BST.java, which complied, and we are not sure why.
 
 With L = level, d = depth, h = height…
 
