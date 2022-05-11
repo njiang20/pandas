@@ -126,6 +126,37 @@ time spent:  hrs
    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+    /*****************************************************
+     * TreeNode search(int)
+     * returns pointer to node containing target,
+     * or null if target not found
+     *****************************************************/
+    TreeNode search( int target )
+    {
+    	/*** YOUR IMPLEMENTATION HERE ***/
+    }
+
+
+    /*****************************************************
+     * int height()
+     * returns height of this tree (length of longest leaf-to-root path)
+     * eg: a 1-node tree has height 1
+     *****************************************************/
+    public int height()
+    {
+    	/*** YOUR IMPLEMENTATION HERE ***/
+    }
+
+
+    /*****************************************************
+     * int numLeaves()
+     * returns number of leaves in tree
+     *****************************************************/
+    public int numLeaves()
+    {
+    	/*** YOUR IMPLEMENTATION HERE ***/
+    }
+
 
    //main method for testing
    public static void main( String[] args )
