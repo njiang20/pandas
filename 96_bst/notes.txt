@@ -10,7 +10,7 @@ DISCO
   high up the tree it is and then add 1.
 * It is not necessary for the child to know its parent.
 * Counters... "think recursively."
-* We must print the new methods in the main method. Additionally,
+* We must print the new methods in the main method.
 
 QCC
 * Is there a way to write the methods without the inclusion of helpers?

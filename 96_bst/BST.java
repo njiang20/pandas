@@ -135,13 +135,14 @@ public class BST
 
   TreeNode search( int target )
   {
-    if (_root.getValue() == target) {
-      return _root;
-    } else if (_root.getLeft() != null) {
-      _root = _root.getLeft();
+    TreeNode node = new TreeNode( _root );
+    if (node.getValue() == target) {
+      return node;
+    } else if (node.getLeft() != null) {
+      node = node.getLeft();
       search(target);
-    } else if (_root.getRight() != null) {
-      _root = _root.getRight();
+    } else if (node.getRight() != null) {
+      node = node.getRight();
       search(target);
     }
     return null; //when target isn't found
@@ -208,13 +209,7 @@ public class BST
     } else {
       return numLeaves(root.getLeft()) + numLeaves(root.getRight());
     }
-    // } else if (root.getLeft() == null) {
-    //   return numLeaves(_root.getRight()) + 1;
-    // } else {
-    //   return numLeaves(_root.getLeft()) + 1;
-    // }
   }
-
 
 
   //main method for testing
