@@ -1,27 +1,16 @@
 Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
 APCS pd7
-HW95 -- Algorithm as Data Structure
-2022-05-10t
-time spent:  hrs
+HW96 -- BSTs is the Perfect Place for Shade / adding the methods for searching,
+        height, and leaves
+2022-05-11w
+time spent: 1 hrs
 
 DISCO
-* The constructor should initialize the root node.
-* We have three components for each traversal (recursing left, printing the cargo,
-  recursing right). What differs is the order in which they're called.
-* It would be more fitting to have System.out.print than System.out.println since
-  we would prefer the nodes stated on a single line.
-* Compare the cargo when inserting to decide if there is a leftward or rightward
-  traversal.
+* When considering measuring height, we can ask the parent to ask its child how
+  high up the tree it is and then add 1.
+* It is not necessary for the child to know its parent.
+* Counters... "think recursively."
+* We must print the new methods in the main method. Additionally,
 
 QCC
-* We noticed that there is no stated protection type for methods in the TreeNode
-  file. We assume that the default is public.
-* Thanks for the informative comments on top of each method! Very helpful.
-* Trace, trace, trace!
-* We are constantly getting NullPointerExceptions when running BST.java, which complied, and we are not sure why.
-
-With L = level, d = depth, h = height…
-
-    a perfect binary tree has __2h-1__ nodes
-    at each level, a perfect binary tree has __2__ nodes
-    height of a complete binary tree w/ n nodes is __0__
+* Is there a way to write the methods without the inclusion of helpers?
