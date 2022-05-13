@@ -1,4 +1,5 @@
 public class ArrayPriorityQueue {
+  private ArrayList<int> arr = new ArrayList();
 
   public ArrayPriorityQueue() {
 
@@ -21,6 +22,6 @@ public class ArrayPriorityQueue {
   }
 
   public static void main(String[] args) {
-    
+
   }
 }
